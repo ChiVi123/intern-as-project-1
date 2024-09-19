@@ -1,3 +1,3 @@
-export { default as ArrowNarrowUpIcon } from './ArrowNarrowUp';
+export { default as ArrowNarrowLeftIcon } from './ArrowNarrowLeft';
 
 export type * from './type';

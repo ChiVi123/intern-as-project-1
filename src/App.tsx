@@ -1,7 +1,7 @@
 import { Button, ConfigProvider } from 'antd';
 import Paragraph from 'antd/es/typography/Paragraph';
 import Title from 'antd/es/typography/Title';
-import { ArrowNarrowUpIcon } from '~icons';
+import { ArrowNarrowLeftIcon } from '~icons';
 
 function App() {
     return (
@@ -19,14 +19,14 @@ function App() {
             </Button>
             <Button
                 iconPosition='end'
-                icon={<ArrowNarrowUpIcon className='rotate-180' />}
+                icon={<ArrowNarrowLeftIcon className='rotate-180' />}
                 className='ant-btn ant-btn--green'
             >
                 Xem thêm
             </Button>
             <Button
                 iconPosition='end'
-                icon={<ArrowNarrowUpIcon className='rotate-180' />}
+                icon={<ArrowNarrowLeftIcon className='rotate-180' />}
                 className='ant-btn ant-btn--pink'
             >
                 Xem thêm
