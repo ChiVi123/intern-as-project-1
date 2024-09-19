@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
         "paths": {
+            "~components": ["./src/shared/components"],
+            "~components/*": ["./src/shared/components/*"],
             "~modules": ["./src/modules"],
             "~modules/*": ["./src/modules/*"],
             "~styles/*": ["./src/view/styles/*"],

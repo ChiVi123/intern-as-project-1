@@ -1,4 +1,4 @@
-.ant-btn {
+.custom-btn.ant-btn {
     gap: 10px;
     height: auto;
     padding: 10px 12px 10px 16px;
@@ -6,15 +6,7 @@
     border-radius: 8px;
     box-shadow: none;
 
-    & &-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 30px;
-        height: 30px;
-    }
-
-    &-icon svg {
+    & .ant-btn-icon svg {
         font-size: 3rem;
     }
 
