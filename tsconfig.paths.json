@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "~modules": ["./src/modules"],
+            "~modules/*": ["./src/modules/*"],
+            "~styles/*": ["./src/view/styles/*"],
+            "~icons": ["./src/shared/assets/icons"],
+            "~icons/*": ["./src/shared/assets/icons/*"]
+        }
+    }
+}
