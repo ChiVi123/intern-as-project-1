@@ -1,0 +1,45 @@
+.ant-btn {
+    gap: 10px;
+    height: auto;
+    padding: 10px 12px 10px 16px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: none;
+
+    & &-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+    }
+
+    &-icon svg {
+        font-size: 3rem;
+    }
+
+    & > span:last-child {
+        font-family: var(--font-nunito);
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+}
+
+.ant-btn--green:not(:disabled):not(.ant-btn-disabled) {
+    color: var(--green-500);
+
+    &:hover {
+        color: var(--green-500);
+        background-color: var(--green-50);
+    }
+}
+
+.ant-btn--pink:not(:disabled):not(.ant-btn-disabled) {
+    color: var(--pink-500);
+
+    &:hover {
+        color: var(--pink-500);
+        background-color: var(--pink-50);
+    }
+}
