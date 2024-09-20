@@ -1,13 +1,26 @@
 {
     "compilerOptions": {
         "paths": {
+            // components
             "~components": ["./src/shared/components"],
             "~components/*": ["./src/shared/components/*"],
+            // icons
+            "~icons": ["./src/shared/assets/icons"],
+            "~icons/*": ["./src/shared/assets/icons/*"],
+            // layout
+            "~layout": ["./src/layout"],
+            "~layout/*": ["./src/layout/*"],
+            // modules
             "~modules": ["./src/modules"],
             "~modules/*": ["./src/modules/*"],
+            // routers
+            "~routers": ["./src/routers"],
+            "~routers/*": ["./src/routers/*"],
+            // styles
             "~styles/*": ["./src/view/styles/*"],
-            "~icons": ["./src/shared/assets/icons"],
-            "~icons/*": ["./src/shared/assets/icons/*"]
+            // view
+            "~view": ["./src/view"],
+            "~view/*": ["./src/view/*"]
         }
     }
 }
