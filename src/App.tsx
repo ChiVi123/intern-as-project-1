@@ -6,12 +6,14 @@ import browserRouter from '~routers';
 function App() {
     return (
         <ConfigProvider
-            button={{ className: 'custom-btn' }}
             theme={{
+                components: {
+                    Layout: { siderBg: 'var(--green-500)' },
+                },
                 token: {
-                    colorPrimary: '#259E58',
-                    colorPrimaryActive: '#005F33',
-                    colorPrimaryHover: '#1C7742',
+                    colorPrimary: '#259e58',
+                    colorPrimaryActive: 'var(--active-menu-color)',
+                    colorPrimaryHover: 'var(--green-600)',
                     // Typography
                     colorText: 'var(--gray-500)',
                     fontFamily: 'var(--font-nunito)',

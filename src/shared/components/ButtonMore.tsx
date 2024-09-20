@@ -11,7 +11,7 @@ export const ButtonMore = forwardRef<HTMLButtonElement, IProps>(({ color = 'gree
         ref={ref}
         iconPosition='end'
         icon={<ArrowNarrowLeftIcon className='rotate-180' />}
-        className={`ant-btn--${color}`}
+        className={`custom-btn ant-btn--${color}`}
         {...buttonProps}
     >
         Xem thêm
