@@ -17,5 +17,5 @@
             "source.organizeImports": "explicit"
         }
     },
-    "cSpell.words": ["antd", "Sider"]
+    "cSpell.words": ["antd", "clsx", "Sider", "Xmark"]
 }

@@ -1,0 +1,46 @@
+.modal {
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 45px;
+    }
+
+    &-btn {
+        --sider-btn-modal: 64px;
+        width: var(--sider-btn-modal);
+        height: var(--sider-btn-modal);
+        border-radius: 100%;
+    }
+
+    &-icon {
+        color: var(--pink-500);
+        font-size: 2.4rem;
+    }
+}
+
+.logo {
+    width: 100%;
+}
+
+.separate {
+    height: 1px;
+    margin: 24px 0;
+    background-color: var(--white);
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: var(--white);
+
+    &-icon {
+        font-size: 2.4rem;
+    }
+
+    &-youtube {
+        font-size: 3.4rem;
+    }
+}

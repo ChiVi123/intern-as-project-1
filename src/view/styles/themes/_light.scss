@@ -1,17 +1,26 @@
 html {
-    --body-bg-color: #e6ffd2;
-    --menu-bg-color: #259e58;
-    --active-menu-color: #005f33;
-    --text-color: #666666;
+    --white: #fff;
+    --black: #000;
+
+    --green-hover-color: #c8ff9c;
 
     --green-50: #eaf6ef;
     --green-500: #259e58;
+    --green-600: #1c7742;
 
     --pink-50: #fee6f4;
     --pink-500: #ec008c;
 
+    --gray-100: #e0e0e0;
     --gray-300: #a3a3a3;
     --gray-400: #858585;
     --gray-500: #666666;
     --gray-600: #4d4d4d;
+
+    --body-bg-color: #e6ffd2;
+    --menu-bg-color: var(--green-500);
+    --active-menu-color: #005f33;
+    --text-color: var(--gray-500);
+
+    --submenu-shadow: 0px 2px 8px 0px #00391f26;
 }

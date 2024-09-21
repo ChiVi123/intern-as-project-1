@@ -1,0 +1,58 @@
+.custom-sider {
+    .ant-layout-sider-children {
+        padding: 14px 40px;
+    }
+
+    &-modal {
+        &-wrap {
+            .ant-modal {
+                position: static;
+            }
+
+            &.ant-modal-wrap {
+                position: absolute;
+                inset: 24px 24px 0 281px;
+            }
+        }
+
+        &-content {
+            &.ant-modal-content {
+                border-radius: 0;
+                box-shadow: none;
+            }
+        }
+
+        &-body {
+            &.ant-modal-body {
+                padding: 32px;
+            }
+        }
+    }
+
+    &-tabs {
+        .ant-tabs-nav::before {
+            border-width: 3px;
+            border-color: #eecde0;
+        }
+
+        .ant-tabs-nav {
+            & > &-wrap::after {
+                box-shadow: none;
+            }
+        }
+
+        .ant-tabs-nav-list {
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .ant-tabs-tab-btn {
+            font-family: var(--font-bangers);
+            font-size: 5rem;
+        }
+
+        .ant-tabs-nav-wrap .ant-tabs-ink-bar {
+            height: 2.67px;
+        }
+    }
+}

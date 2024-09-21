@@ -6,7 +6,9 @@ import { ButtonMore } from '~components';
 function Home() {
     return (
         <>
-            <Button type='primary'>KHÁM PHÁ NGAY</Button>
+            <Button type='primary' className='custom-btn'>
+                KHÁM PHÁ NGAY
+            </Button>
 
             <ButtonMore />
             <ButtonMore color='pink' />
