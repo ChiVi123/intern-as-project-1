@@ -1,17 +1,9 @@
 @use '/src/view/styles/abstracts';
 
 .custom-sider {
-    .ant-layout-sider-children {
-        padding: 14px 40px;
-
-        @include abstracts.breakpoint(xxl) {
-            padding-right: 38px;
-            padding-left: 38px;
-        }
-
-        @include abstracts.breakpoint(lg) {
-            padding-right: 28px;
-            padding-left: 28px;
+    &.ant-layout-sider:not(.ant-layout-sider-zero-width) {
+        .ant-layout-sider-children {
+            padding: 14px 40px;
         }
     }
 
