@@ -8,7 +8,7 @@ function App() {
         <ConfigProvider
             theme={{
                 components: {
-                    Layout: { siderBg: 'var(--green-500)' },
+                    Layout: { headerBg: 'var(--green-500)', headerColor: 'var(--white)', siderBg: 'var(--green-500)' },
                 },
                 token: {
                     colorPrimary: '#259e58',

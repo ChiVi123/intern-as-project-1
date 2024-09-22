@@ -1,0 +1,53 @@
+@use '/src/view/styles/abstracts';
+
+.custom-header {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    height: 50px;
+    padding-right: 16px;
+    padding-left: 16px;
+    z-index: 2;
+
+    @include abstracts.breakpoint(lg) {
+        display: block;
+    }
+
+    &-drawer {
+        &-mask {
+            &.ant-drawer-mask {
+                background: none;
+                backdrop-filter: blur(2px);
+            }
+        }
+
+        &-header {
+            &.ant-drawer-header {
+                padding: 12px 16px 6px 16px;
+                border: none;
+
+                .ant-drawer-close {
+                    margin-right: 0;
+                    margin-left: auto;
+                    padding: 0;
+                    color: var(--white);
+                }
+            }
+        }
+
+        &-content {
+            &.ant-drawer-content {
+                background-color: var(--green-500);
+                color: var(--white);
+            }
+        }
+
+        &-body {
+            &.ant-drawer-body {
+                padding: 76px 16px 0px;
+            }
+        }
+    }
+}

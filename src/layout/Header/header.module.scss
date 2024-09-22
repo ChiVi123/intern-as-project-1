@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.logo {
+    &-link {
+        width: 48px;
+        height: 100%;
+        padding: 6px 0;
+    }
+
+    &-image {
+        width: 100%;
+    }
+}
+
+.collapsed-icon {
+    color: var(--white);
+    font-size: 2.4rem;
+}
