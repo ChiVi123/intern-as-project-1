@@ -13,7 +13,7 @@ function TabContent({ data }: IProps) {
     return (
         <div className={cx('tab-content')}>
             {data.map((item, index) => (
-                <div key={'column-' + index} className={cx('tab-content__column')}>
+                <div key={'column-' + index}>
                     {Boolean(item.title) && <span className={cx('tab-content__title')}>{item.title}</span>}
                     <ul>
                         {item.contents.map((content) => (

@@ -2,14 +2,16 @@
 
 .tab-content {
     display: flex;
-    gap: 86px;
+    flex-wrap: wrap;
+    column-gap: 86px;
+    row-gap: 24px;
 
     @include abstracts.breakpoint(xxl) {
-        gap: 28px;
+        column-gap: 28px;
     }
 
     @include abstracts.breakpoint(xl) {
-        gap: 22px;
+        column-gap: 22px;
     }
 
     &__title {
@@ -17,7 +19,7 @@
         margin-bottom: 24px;
 
         color: var(--green-500);
-        font-size: clamp(2.3rem, 1vw + 1.25rem, 3.2rem);
+        font-size: clamp(2.3rem, 1vw + 1.08rem, 3.2rem);
         font-weight: 800;
     }
 
@@ -51,7 +53,8 @@
         span:last-child {
             flex: 1 1 0%;
             color: var(--gray-600);
-            font-size: clamp(1.4rem, 2vw + 1rem, 1.8rem);
+            font-size: clamp(1.4rem, 2vw - 1.25rem, 1.8rem);
+            text-wrap: nowrap;
         }
     }
 }

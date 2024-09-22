@@ -1,4 +1,4 @@
-import { Button, ConfigProvider, Layout, Modal, Tabs, TabsProps } from 'antd';
+import { Button, ConfigProvider, Modal, Tabs, TabsProps } from 'antd';
 import classNames from 'classnames/bind';
 import { useState } from 'react';
 
@@ -8,8 +8,6 @@ import Navbar from '~layout/Navbar';
 import { TabContent } from './components';
 
 import styles from './sidebar.module.scss';
-
-const cx = classNames.bind(styles);
 
 const tabs: TabsProps['items'] = [
     {
@@ -202,12 +200,14 @@ const tabs: TabsProps['items'] = [
     },
 ];
 
+const cx = classNames.bind(styles);
+
 function Sidebar() {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const handleOpen = () => setModalOpen((prev) => !prev);
 
     return (
-        <Layout.Sider width={257} className='custom-sider'>
+        <>
             <div className={cx('modal-wrapper')}>
                 <Button className={cx('modal-btn')} onClick={handleOpen}>
                     {modalOpen ? (
@@ -260,7 +260,7 @@ function Sidebar() {
                 <YoutubeIcon className={cx('socials-youtube')} />
                 <InstagramIcon className={cx('socials-icon')} />
             </div>
-        </Layout.Sider>
+        </>
     );
 }
 

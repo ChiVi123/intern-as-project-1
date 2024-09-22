@@ -13,7 +13,17 @@ function DefaultLayout() {
             </Layout.Header>
 
             <Layout>
-                <Sidebar />
+                <Layout.Sider
+                    width={257}
+                    breakpoint='lg'
+                    collapsedWidth={0}
+                    collapsible
+                    trigger={null}
+                    className='custom-sider'
+                >
+                    <Sidebar />
+                </Layout.Sider>
+
                 <Layout>
                     <div className='flex-1 bg-theme p-4'>
                         <Outlet />
