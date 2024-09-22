@@ -55,37 +55,35 @@ function Navbar() {
         <Fragment key={item.key}>
             {item.children ? (
                 <div
-                    className={cx('navbar-item', {
-                        'navbar-item--root': isRoot,
-                        'navbar-item--active': item.key === pathname,
+                    className={cx('item', {
+                        'item--root': isRoot,
+                        'item--active': item.key === pathname,
                     })}
                 >
-                    <span className={cx('navbar-item__label')}>{item.label}</span>
+                    <span className={cx('item-label')}>{item.label}</span>
                     {item.children && (
-                        <span className={cx('navbar-item__icon')}>
+                        <span className={cx('item-icon')}>
                             <ArrowIcon />
                         </span>
                     )}
 
                     {item.children && (
-                        <div className={cx('navbar-item__submenu')}>
-                            {item.children.map((child) => navItem(child, false))}
-                        </div>
+                        <div className={cx('item-submenu')}>{item.children.map((child) => navItem(child, false))}</div>
                     )}
                 </div>
             ) : (
                 <NavLink
                     to={item.key}
                     className={({ isActive }) =>
-                        cx('navbar-item', {
-                            'navbar-item--root': isRoot,
-                            'navbar-item--active': isActive,
+                        cx('item', {
+                            'item--root': isRoot,
+                            'item--active': isActive,
                         })
                     }
                 >
-                    <span className={cx('navbar-item__label')}>{item.label}</span>
+                    <span className={cx('item-label')}>{item.label}</span>
                     {item.children && (
-                        <span className={cx('navbar-item__icon')}>
+                        <span className={cx('item-icon')}>
                             <ArrowIcon />
                         </span>
                     )}
@@ -94,6 +92,6 @@ function Navbar() {
         </Fragment>
     );
 
-    return <nav className={cx('navbar')}>{menuItems.map((item) => navItem(item, true))}</nav>;
+    return <nav className={cx('wrapper')}>{menuItems.map((item) => navItem(item, true))}</nav>;
 }
 export default Navbar;

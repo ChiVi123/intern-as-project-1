@@ -11,13 +11,13 @@ const cx = classNames.bind(styles);
 
 function TabContent({ data }: IProps) {
     return (
-        <div className={cx('tab-content')}>
+        <div className={cx('wrap')}>
             {data.map((item, index) => (
                 <div key={'column-' + index}>
-                    {Boolean(item.title) && <span className={cx('tab-content__title')}>{item.title}</span>}
+                    {Boolean(item.title) && <span className={cx('title')}>{item.title}</span>}
                     <ul>
                         {item.contents.map((content) => (
-                            <li key={content.key} className={cx('tab-content__item')}>
+                            <li key={content.key} className={cx('content-item')}>
                                 <span>{content.key}</span>
                                 <span>{content.label}</span>
                             </li>

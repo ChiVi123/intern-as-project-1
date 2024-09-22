@@ -1,18 +1,18 @@
-.navbar {
+.wrapper {
     margin-bottom: 300px;
 
-    & > &-item {
+    .item {
         padding: 12px 10px;
     }
 }
 
-.navbar-item {
+.item {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    &__submenu {
+    &-submenu {
         position: absolute;
         top: 0;
         left: 100%;
@@ -27,7 +27,7 @@
         z-index: 1001;
     }
 
-    &__submenu > & {
+    &-submenu > & {
         padding: 10px 14px 18px;
         color: var(--gray-500);
         font-size: clamp(1.2rem, 0.4vw + 1rem, 1.8rem);
@@ -37,7 +37,7 @@
         }
     }
 
-    &__submenu > & + & {
+    &-submenu > & + & {
         padding-top: 18px;
         border-top: 1px solid var(--gray-100);
     }
@@ -46,31 +46,31 @@
         margin-top: 16px;
     }
 
-    &--root > &__label {
+    &--root > &-label {
         display: block;
         padding-bottom: 6px;
         border-bottom: 3px solid transparent;
         font-family: var(--font-bangers);
     }
 
-    &--root > &__icon {
+    &--root > &-icon {
         margin-bottom: 10px;
     }
 
-    &--root > &__label,
-    &--root > &__icon {
+    &--root > &-label,
+    &--root > &-icon {
         color: var(--white);
         font-size: clamp(1.6rem, 1.2vw + 1rem, 3.2rem);
     }
 
-    &--active > &__label,
-    &--active > &__icon {
+    &--active > &-label,
+    &--active > &-icon {
         color: var(--green-600);
         border-bottom-color: var(--green-600);
     }
 
-    &--root:not(&--active):hover > &__label,
-    &--root:not(&--active):hover > &__icon {
+    &--root:not(&--active):hover > &-label,
+    &--root:not(&--active):hover > &-icon {
         color: var(--green-hover-color);
     }
     &--root:hover::before {
@@ -87,7 +87,7 @@
         cursor: pointer;
     }
 
-    &:hover > &__submenu {
+    &:hover > &-submenu {
         display: block;
     }
 }

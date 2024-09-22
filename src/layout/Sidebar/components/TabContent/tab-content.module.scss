@@ -1,6 +1,6 @@
 @use '/src/view/styles/abstracts';
 
-.tab-content {
+.wrap {
     display: flex;
     flex-wrap: wrap;
     column-gap: 86px;
@@ -13,48 +13,48 @@
     @include abstracts.breakpoint(xl) {
         column-gap: 22px;
     }
+}
 
-    &__title {
-        display: inline-block;
-        margin-bottom: 24px;
+.title {
+    display: inline-block;
+    margin-bottom: 24px;
 
-        color: var(--green-500);
-        font-size: clamp(2.3rem, 1vw + 1.08rem, 3.2rem);
-        font-weight: 800;
+    color: var(--green-500);
+    font-size: clamp(2.3rem, 1vw + 1.08rem, 3.2rem);
+    font-weight: 800;
+}
+
+.content-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @include abstracts.breakpoint(xxl) {
+        gap: 8px;
     }
 
-    &__item {
+    &:not(:first-child) {
+        margin-top: 24px;
+    }
+
+    span:first-child {
+        --custom-tab-item-size: 32px;
         display: flex;
         align-items: center;
-        gap: 16px;
+        justify-content: center;
 
-        @include abstracts.breakpoint(xxl) {
-            gap: 8px;
-        }
+        width: var(--custom-tab-item-size);
+        height: var(--custom-tab-item-size);
+        border: 1px solid var(--pink-500);
+        border-radius: 100%;
 
-        &:not(:first-child) {
-            margin-top: 24px;
-        }
+        color: var(--pink-500);
+    }
 
-        span:first-child {
-            --custom-tab-item-size: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            width: var(--custom-tab-item-size);
-            height: var(--custom-tab-item-size);
-            border: 1px solid var(--pink-500);
-            border-radius: 100%;
-
-            color: var(--pink-500);
-        }
-
-        span:last-child {
-            flex: 1 1 0%;
-            color: var(--gray-600);
-            font-size: clamp(1.4rem, 2vw - 1.25rem, 1.8rem);
-            text-wrap: nowrap;
-        }
+    span:last-child {
+        flex: 1 1 0%;
+        color: var(--gray-600);
+        font-size: clamp(1.4rem, 2vw - 1.25rem, 1.8rem);
+        text-wrap: nowrap;
     }
 }
