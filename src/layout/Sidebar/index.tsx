@@ -233,6 +233,7 @@ function Sidebar() {
                         theme={{
                             components: {
                                 Tabs: {
+                                    horizontalItemGutter: 0,
                                     itemColor: '#67776F',
                                     itemHoverColor: '#67776F',
                                     itemSelectedColor: 'var(--pink-500)',

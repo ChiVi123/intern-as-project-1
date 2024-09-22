@@ -1,0 +1,13 @@
+@use './variables';
+
+@mixin breakpoint($key) {
+    $breakpoint: map-get(variables.$grid-breakpoints, $key);
+
+    @if $breakpoint or $key != xs {
+        @media (max-width: ($breakpoint - 0.02)) {
+            @content;
+        }
+    } @else {
+        @error "The value #{$key} is not in breakpoints list.";
+    }
+}

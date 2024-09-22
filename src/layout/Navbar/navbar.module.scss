@@ -30,7 +30,7 @@
     &__submenu > & {
         padding: 10px 14px 18px;
         color: var(--gray-500);
-        font-size: 1.8rem;
+        font-size: clamp(1.2rem, 0.4vw + 1rem, 1.8rem);
 
         &:hover {
             color: var(--green-500);
@@ -60,7 +60,7 @@
     &--root > &__label,
     &--root > &__icon {
         color: var(--white);
-        font-size: 3.2rem;
+        font-size: clamp(1.6rem, 1.2vw + 1rem, 3.2rem);
     }
 
     &--active > &__label,

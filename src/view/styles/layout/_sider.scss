@@ -1,6 +1,18 @@
+@use '/src/view/styles/abstracts';
+
 .custom-sider {
     .ant-layout-sider-children {
         padding: 14px 40px;
+
+        @include abstracts.breakpoint(xxl) {
+            padding-right: 38px;
+            padding-left: 38px;
+        }
+
+        @include abstracts.breakpoint(lg) {
+            padding-right: 28px;
+            padding-left: 28px;
+        }
     }
 
     &-modal {
@@ -17,6 +29,7 @@
 
         &-content {
             &.ant-modal-content {
+                padding: 0;
                 border-radius: 0;
                 box-shadow: none;
             }
@@ -25,6 +38,10 @@
         &-body {
             &.ant-modal-body {
                 padding: 32px;
+
+                @include abstracts.breakpoint(xxl) {
+                    padding: 16px;
+                }
             }
         }
     }
@@ -35,23 +52,20 @@
             border-color: #eecde0;
         }
 
-        .ant-tabs-nav {
-            & > &-wrap::after {
-                box-shadow: none;
-            }
-        }
-
         .ant-tabs-nav-list {
-            justify-content: space-between;
-            width: 100%;
+            gap: 80px;
+
+            @include abstracts.breakpoint(xxl) {
+                gap: 46px;
+            }
         }
 
         .ant-tabs-tab-btn {
             font-family: var(--font-bangers);
-            font-size: 5rem;
+            font-size: clamp(2.4rem, 2.2vw + 1rem, 5rem);
         }
 
-        .ant-tabs-nav-wrap .ant-tabs-ink-bar {
+        .ant-tabs-nav .ant-tabs-ink-bar {
             height: 2.67px;
         }
     }

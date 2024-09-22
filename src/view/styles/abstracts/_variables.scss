@@ -6,3 +6,12 @@ $spacing: (
     '5': 32px,
     '6': 48px,
 );
+
+$grid-breakpoints: (
+    xs: 480px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1600px,
+);
