@@ -100,7 +100,7 @@
     br {
         display: none;
 
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.breakpoint(xxl) {
             display: inline;
         }
     }
