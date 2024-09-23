@@ -28,7 +28,7 @@ function DefaultLayout() {
                     <div className='flex-1 bg-theme p-4'>
                         <Outlet />
                     </div>
-                    <Layout.Footer>
+                    <Layout.Footer className='custom-footer'>
                         <Footer />
                     </Layout.Footer>
                 </Layout>

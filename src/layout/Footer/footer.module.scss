@@ -1,0 +1,133 @@
+@use '/src/view/styles/abstracts';
+
+.wrapper {
+    color: var(--white);
+}
+
+.inner {
+    display: flex;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    margin-right: 16px;
+    margin-left: 16px;
+
+    @include abstracts.breakpoint(lg) {
+        flex-direction: column;
+        padding-bottom: 28px;
+        row-gap: 24px;
+    }
+}
+
+.heading-2 {
+    margin-bottom: 16px;
+    font-family: var(--font-bangers);
+    font-size: 2.4rem;
+    line-height: 1.06417;
+}
+
+.logo {
+    width: 100%;
+}
+
+.column {
+    flex: 1 1 auto;
+
+    &:first-child {
+        margin-left: 80px;
+        margin-right: 81px;
+        flex: 1 1 462px;
+
+        @include abstracts.breakpoint(xxl) {
+            flex: 1 1 268px;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        @include abstracts.breakpoint(lg) {
+            flex: 1 1 auto;
+            margin: 0;
+        }
+
+        .heading-2 {
+            margin-bottom: 44px;
+
+            @include abstracts.breakpoint(lg) {
+                margin: 8px;
+            }
+        }
+    }
+
+    &:last-child {
+        .heading-2 {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.list {
+    &--dot {
+        margin-left: 14px;
+        list-style: disc;
+    }
+
+    &:first-of-type {
+        margin-bottom: 28px;
+    }
+
+    li + li {
+        margin-top: 12px;
+    }
+}
+
+.item {
+    font-size: 1.8rem;
+    line-height: 1.5;
+
+    @include abstracts.breakpoint(xxl) {
+        font-size: 1.6rem;
+    }
+
+    &--icon {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    br {
+        display: none;
+
+        @include abstracts.breakpoint(lg) {
+            display: inline;
+        }
+    }
+
+    a:hover {
+        color: var(--white);
+        text-decoration: underline;
+    }
+}
+
+.icon {
+    margin-right: 8px;
+    color: var(--white);
+    font-size: 2.4rem;
+
+    &--small {
+        font-size: 0.8rem;
+    }
+}
+
+.copyright {
+    padding: 21px 0;
+    border-top: 1px solid var(--white);
+    text-align: center;
+    font-size: 1.6rem;
+
+    @include abstracts.breakpoint(md) {
+        font-size: 1rem;
+    }
+}
