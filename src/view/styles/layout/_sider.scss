@@ -3,6 +3,8 @@
 .custom-sider {
     &.ant-layout-sider:not(.ant-layout-sider-zero-width) {
         .ant-layout-sider-children {
+            display: flex;
+            flex-direction: column;
             padding: 14px 40px;
         }
     }
