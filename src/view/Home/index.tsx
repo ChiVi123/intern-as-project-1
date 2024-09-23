@@ -1,27 +1,47 @@
-import { Button } from 'antd';
-import Paragraph from 'antd/es/typography/Paragraph';
-import Title from 'antd/es/typography/Title';
-import { ButtonMore } from '~components';
+import { Button, Carousel, ConfigProvider } from 'antd';
+import classNames from 'classnames/bind';
+import { ArrowLeftIcon, ArrowRightIcon } from '~icons';
+import styles from './home.module.scss';
+
+interface AntdArrowProps {
+    currentSlide?: number;
+    slideCount?: number;
+}
+
+interface ArrowProps {
+    direction: 'left' | 'right';
+}
+
+const cx = classNames.bind(styles);
+
+const Arrow = ({ currentSlide, direction, slideCount, ...carouselProps }: ArrowProps & AntdArrowProps) =>
+    direction === 'left' ? <ArrowLeftIcon {...carouselProps} /> : <ArrowRightIcon {...carouselProps} />;
 
 function Home() {
     return (
-        <>
-            <Button type='primary' className='custom-btn'>
-                KHÁM PHÁ NGAY
-            </Button>
+        <ConfigProvider theme={{ components: { Carousel: { dotGap: 9, dotHeight: 16 } } }}>
+            <div className={cx('wrapper')}>
+                <Carousel
+                    arrows
+                    infinite={false}
+                    prevArrow={<Arrow direction='left' />}
+                    nextArrow={<Arrow direction='right' />}
+                    className='home-custom-slick'
+                >
+                    <img src='/home-1.png' alt='home-1' />
+                    <img src='/home-2.png' alt='home-2' />
+                    <img src='/home-1.png' alt='home-3' />
+                    <img src='/home-2.png' alt='home-4' />
+                </Carousel>
 
-            <ButtonMore />
-            <ButtonMore color='pink' />
-
-            <Title>Đầm sen thế giới tuyệt vời</Title>
-            <Title level={2}>Các mốc son phát triển</Title>
-            <Paragraph className='text-center'>
-                Công viên Văn hóa Đầm Sen có 13 trò chơi cảm giác mạnh (Tàu lượn siêu tốc, vượt thác, Power Surge…); 5
-                trò chơi tương tác ảo công nghệ hiện đại; 5 trò chơi thư giãn; 12 trò chơi thiếu nhi; và nhiều trò chơi
-                khác.
-            </Paragraph>
-        </>
+                <Button type='primary' className={cx('custom-btn', 'button-explore')}>
+                    KHÁM PHÁ NGAY
+                </Button>
+            </div>
+        </ConfigProvider>
     );
 }
 
 export default Home;
+// <button type="button" aria-label="next" data-role="none" class="slick-arrow slick-next" style="display: block;"></button>
+// prevArrow={<ArrowLeftIcon />} nextArrow={<ArrowRightIcon />}

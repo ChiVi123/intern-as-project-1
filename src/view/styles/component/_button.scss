@@ -1,3 +1,5 @@
+@use '/src/view/styles/abstracts';
+
 .custom-btn.ant-btn {
     gap: 10px;
     height: auto;
@@ -5,6 +7,10 @@
     border: 0;
     border-radius: 8px;
     box-shadow: none;
+
+    @include abstracts.breakpoint(md) {
+        padding: 10px 16px 10px 16px;
+    }
 
     & .ant-btn-icon svg {
         font-size: 3rem;

@@ -25,9 +25,9 @@ function DefaultLayout() {
                 </Layout.Sider>
 
                 <Layout>
-                    <div className='flex-1 bg-theme p-4'>
+                    <Layout.Content className='custom-content'>
                         <Outlet />
-                    </div>
+                    </Layout.Content>
                     <Layout.Footer className='custom-footer'>
                         <Footer />
                     </Layout.Footer>

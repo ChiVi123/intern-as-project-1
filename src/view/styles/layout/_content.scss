@@ -1,0 +1,10 @@
+@use '/src/view/styles/abstracts';
+
+.custom-content.ant-layout-content {
+    padding: 24px;
+    background-color: var(--body-bg-color);
+
+    @include abstracts.breakpoint(md) {
+        padding: 0;
+    }
+}

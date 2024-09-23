@@ -1,5 +1,7 @@
 export { default as ArrowIcon } from './Arrow';
+export { default as ArrowLeftIcon } from './ArrowLeft';
 export { default as ArrowNarrowLeftIcon } from './ArrowNarrowLeft';
+export { default as ArrowRightIcon } from './ArrowRight';
 export { default as EllipseIcon } from './Ellipse';
 export { default as FacebookIcon } from './Facebook';
 export { default as InstagramIcon } from './Instagram';

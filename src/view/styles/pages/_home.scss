@@ -1,0 +1,57 @@
+@use '/src/view/styles/abstracts';
+
+.home-custom-slick.slick-slider {
+    @include abstracts.breakpoint(lg) {
+        height: calc(100vh - 98px);
+    }
+
+    @include abstracts.breakpoint(md) {
+        height: calc(100vh - 50px);
+    }
+
+    .slick-arrow {
+        --home-slick-arrow-size: 64px;
+        width: var(--home-slick-arrow-size);
+        height: var(--home-slick-arrow-size);
+        padding: 20px;
+        border-radius: 100%;
+        background-color: var(--white);
+
+        @include abstracts.breakpoint(xxl) {
+            --home-slick-arrow-size: 56px;
+            padding: 14px;
+        }
+
+        color: var(--green-500);
+        font-size: 2.6rem;
+
+        &::after {
+            content: none;
+        }
+    }
+
+    .slick-list,
+    .slick-list .slick-track,
+    .slick-track div,
+    .slick-track img {
+        height: 100%;
+    }
+
+    .slick-track img {
+        object-fit: cover;
+    }
+
+    .slick-dots li {
+        background-color: var(--white);
+        border: 2px solid var(--white);
+        border-radius: 100%;
+    }
+
+    .slick-dots li.slick-active {
+        width: 16px;
+
+        button {
+            background-color: var(--green-500);
+        }
+    }
+}
