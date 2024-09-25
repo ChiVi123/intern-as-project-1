@@ -1,0 +1,125 @@
+@use '/src/view/styles/abstracts';
+
+.custom-navbar.ant-menu {
+    background-color: transparent;
+    margin-bottom: auto;
+
+    &.ant-menu-root.ant-menu-vertical {
+        border-inline-end: none;
+    }
+
+    *[role='menuitem'] {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ant-menu-item-selected {
+        .ant-menu-title-content {
+            color: var(--active-menu-color);
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                left: 0;
+                bottom: 6px;
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: var(--active-menu-color);
+            }
+        }
+    }
+
+    .ant-menu-submenu-title {
+        height: 100%;
+    }
+
+    .ant-menu-title-content {
+        position: relative;
+        display: block;
+        padding-bottom: 6px;
+        font-family: var(--font-bangers);
+        font-size: inherit;
+        line-height: 1.5;
+
+        & + span {
+            font-size: inherit;
+            margin-bottom: 4px;
+        }
+    }
+
+    .ant-menu-item.ant-menu-item-active:not(.ant-menu-item-selected):hover,
+    .ant-menu-submenu-active:hover .ant-menu-submenu-title {
+        background-color: transparent;
+        color: var(--green-hover-color);
+    }
+
+    & > .ant-menu-item.ant-menu-item-selected {
+        background-color: transparent;
+    }
+
+    & > *[role='menuitem'],
+    & > .ant-menu-submenu > [role='menuitem'] {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 10px;
+        margin: 0;
+        font-size: clamp(2.4rem, 1.5vw + 1rem, 3.2rem);
+        color: var(--white);
+    }
+
+    & > li.ant-menu-item,
+    & > li.ant-menu-submenu {
+        height: 57px;
+
+        @include abstracts.breakpoint(xxl) {
+            height: 46px;
+        }
+    }
+
+    & > li + li.ant-menu-item,
+    & > li + li.ant-menu-submenu {
+        margin-top: 16px;
+
+        @include abstracts.breakpoint(xxl) {
+            margin-top: 12px;
+        }
+    }
+}
+
+.custom-navbar-submenu:not(.custom-navbar) {
+    .ant-menu {
+        padding: 12px;
+        border-radius: 12px;
+        box-shadow: var(--submenu-shadow);
+    }
+
+    .ant-menu-item {
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 14px;
+        color: var(--gray-500);
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    .ant-menu-item.ant-menu-item-selected,
+    .ant-menu-item.ant-menu-item-active:not(.ant-menu-item-selected):hover {
+        background-color: transparent;
+        color: var(--green-500);
+    }
+
+    .ant-menu-item-divider {
+        margin-top: 8px;
+        color: var(--gray-100);
+    }
+
+    & li + li.ant-menu-item,
+    & li + li.ant-menu-item-divider {
+        margin-top: 8px;
+    }
+}

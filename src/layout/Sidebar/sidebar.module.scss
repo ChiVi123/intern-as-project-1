@@ -1,9 +1,15 @@
+@use '/src/view/styles/abstracts';
+
 .modal {
     &-wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 45px;
+
+        @include abstracts.breakpoint(xxl) {
+            margin-bottom: 28px;
+        }
     }
 
     &-btn {
@@ -11,16 +17,25 @@
         width: var(--sider-btn-modal);
         height: var(--sider-btn-modal);
         border-radius: 100%;
+
+        @include abstracts.breakpoint(xxl) {
+            --sider-btn-modal: 48px;
+        }
     }
 
     &-icon {
         color: var(--pink-500);
         font-size: 2.4rem;
+
+        @include abstracts.breakpoint(xxl) {
+            font-size: 2rem;
+        }
     }
 }
 
 .logo {
     width: 100%;
+    margin-left: 3px;
 }
 
 .separate {

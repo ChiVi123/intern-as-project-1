@@ -1,14 +1,54 @@
-import { Button, ConfigProvider, Modal, Tabs, TabsProps } from 'antd';
+import { Button, ConfigProvider, Menu, MenuProps, Modal, Tabs, TabsProps } from 'antd';
 import classNames from 'classnames/bind';
 import { useState } from 'react';
 
-import { FacebookIcon, InstagramIcon, MenuIcon, XmarkLargeIcon, YoutubeIcon } from '~icons';
-import Navbar from '~layout/Navbar';
+import { ArrowIcon, FacebookIcon, InstagramIcon, MenuIcon, XmarkLargeIcon, YoutubeIcon } from '~icons';
+// import Navbar from '~layout/Navbar';
 
 import { TabContent } from './components';
 
 import styles from './sidebar.module.scss';
 
+type MenuItem = Required<MenuProps>['items'][number];
+
+const menuItems: MenuItem[] = [
+    {
+        key: '/',
+        label: 'Trang chủ',
+    },
+    {
+        key: '/explore',
+        label: 'Khám phá',
+    },
+    {
+        key: '/introduce',
+        label: 'Giới thiệu',
+        children: [
+            { key: '/introduce/history', label: 'Lịch sử hình thành' },
+            { key: 'introduce-1', type: 'divider' },
+            { key: '/introduce/staff', label: 'Thành viên' },
+            { key: 'introduce-2', type: 'divider' },
+            { key: '/introduce/policy', label: 'Chính sách bảo mật' },
+        ],
+    },
+    {
+        key: '/ticket',
+        label: 'Giá vé',
+        children: [
+            { key: '/ticket/inside', label: 'Vé trong công viên' },
+            { key: 'ticket-1', type: 'divider' },
+            { key: '/ticket/group', label: 'Vé tập thể' },
+            { key: 'ticket-2', type: 'divider' },
+            { key: '/ticket/service', label: 'Vé dịch vụ' },
+            { key: 'ticket-3', type: 'divider' },
+            { key: '/ticket/exercise', label: 'Vé tập thể dục' },
+        ],
+    },
+    {
+        key: '/event',
+        label: 'Sự kiện',
+    },
+];
 const tabs: TabsProps['items'] = [
     {
         key: '1',
@@ -202,6 +242,10 @@ const tabs: TabsProps['items'] = [
 
 const cx = classNames.bind(styles);
 
+const ExpandIcon = ({ isSubMenu, isOpen, popupStyle, popupClassName, eventKey, title, ...props }: any) => (
+    <ArrowIcon {...props} />
+);
+
 function Sidebar() {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const handleOpen = () => setModalOpen((prev) => !prev);
@@ -247,11 +291,15 @@ function Sidebar() {
                 </Modal>
             </div>
 
-            <Navbar />
+            {/* <Navbar /> */}
+            <Menu
+                items={menuItems}
+                expandIcon={ExpandIcon}
+                className='custom-navbar'
+                rootClassName='custom-navbar-submenu'
+            />
 
-            <div>
-                <img src='/logo-with-text.png' alt='logo' className={cx('logo')} />
-            </div>
+            <img src='/logo-with-text.png' alt='logo' className={cx('logo')} />
 
             <div className={cx('separate')}></div>
 
