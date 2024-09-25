@@ -1,5 +1,6 @@
-import { Layout } from 'antd';
+import { FloatButton, Layout } from 'antd';
 import { Outlet } from 'react-router-dom';
+import { MessengerIcon, PhoneIcon } from '~icons';
 import Header from './Header';
 import Sidebar from './Sidebar';
 
@@ -28,6 +29,9 @@ function LayoutNoFooter() {
                     </Layout.Content>
                 </Layout>
             </Layout>
+
+            <FloatButton icon={<MessengerIcon />} className='custom-float-button' />
+            <FloatButton icon={<PhoneIcon />} className='custom-float-button' />
         </Layout>
     );
 }
