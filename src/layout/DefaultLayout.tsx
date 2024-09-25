@@ -1,7 +1,9 @@
 import { FloatButton, Layout } from 'antd';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { MessengerIcon, PhoneIcon } from '~icons';
+
 import Footer from './Footer';
 import Header from './Header';
 import Sidebar from './Sidebar';
@@ -27,7 +29,9 @@ function DefaultLayout() {
 
                 <Layout>
                     <Layout.Content className='custom-content'>
-                        <Outlet />
+                        <Suspense fallback={<>loading...</>}>
+                            <Outlet />
+                        </Suspense>
                     </Layout.Content>
                     <Layout.Footer className='custom-footer'>
                         <Footer />

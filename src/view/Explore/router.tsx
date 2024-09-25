@@ -1,7 +1,9 @@
 import { RouteObject } from 'react-router-dom';
-import ExplorePage from '.';
+// import ExplorePage from '.';
+import { lazy } from 'react';
 
 export const exploreRouter: RouteObject = {
     path: '/explore',
-    Component: ExplorePage,
+    Component: lazy(() => import('./index')),
+    // Component: ExplorePage,
 };
