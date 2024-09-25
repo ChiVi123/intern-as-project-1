@@ -41,6 +41,10 @@
         object-fit: cover;
     }
 
+    .slick-dots-bottom {
+        bottom: 36px;
+    }
+
     .slick-dots li {
         background-color: var(--white);
         border: 2px solid var(--white);
