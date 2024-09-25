@@ -1,12 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom';
-import DefaultLayout from '~layout';
+import { LayoutNoFooter } from '~layout';
 import { exploreRouter } from '~view/Explore/router';
 import { homeRouter } from '~view/Home/router';
 
 const browserRouter = createBrowserRouter([
     {
         path: '',
-        Component: DefaultLayout,
+        Component: LayoutNoFooter,
         children: [homeRouter, exploreRouter],
     },
 ]);
