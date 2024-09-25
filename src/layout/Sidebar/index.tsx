@@ -3,10 +3,10 @@ import classNames from 'classnames/bind';
 import { useState } from 'react';
 
 import { ArrowIcon, FacebookIcon, InstagramIcon, MenuIcon, XmarkLargeIcon, YoutubeIcon } from '~icons';
-// import Navbar from '~layout/Navbar';
 
 import { TabContent } from './components';
 
+import { useLocation, useNavigate } from 'react-router-dom';
 import styles from './sidebar.module.scss';
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -248,6 +248,9 @@ const ExpandIcon = ({ isSubMenu, isOpen, popupStyle, popupClassName, eventKey, t
 
 function Sidebar() {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
+    const navigate = useNavigate();
+    const { pathname } = useLocation();
+
     const handleOpen = () => setModalOpen((prev) => !prev);
 
     return (
@@ -291,12 +294,16 @@ function Sidebar() {
                 </Modal>
             </div>
 
-            {/* <Navbar /> */}
             <Menu
                 items={menuItems}
+                selectedKeys={[pathname]}
                 expandIcon={ExpandIcon}
                 className='custom-navbar'
                 rootClassName='custom-navbar-submenu'
+                onClick={({ key, keyPath }) => {
+                    console.log('key and keyPath::', key, keyPath);
+                    navigate(key);
+                }}
             />
 
             <img src='/logo-with-text.png' alt='logo' className={cx('logo')} />
