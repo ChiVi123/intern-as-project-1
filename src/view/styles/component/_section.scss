@@ -1,0 +1,14 @@
+@use '/src/view/styles/abstracts';
+
+.section {
+    padding: 72px;
+    background-color: var(--white);
+
+    @include abstracts.breakpoint(xxl) {
+        padding: 42px;
+    }
+
+    @include abstracts.breakpoint(lg) {
+        padding: 16px;
+    }
+}

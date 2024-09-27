@@ -1,8 +1,29 @@
+@use '/src/view/styles/abstracts';
+
 h1.ant-typography {
+    position: relative;
+    width: fit-content;
+    margin: 56px auto 72px;
+    padding-bottom: 8px;
     color: var(--green-500);
     font-family: var(--font-bangers);
     font-size: 9.6rem;
     font-weight: 400;
+
+    @include abstracts.breakpoint(xxl) {
+        font-size: 8.2rem;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        height: 5px;
+        background-color: var(--green-500);
+    }
 }
 
 h2.ant-typography {
@@ -10,4 +31,8 @@ h2.ant-typography {
     font-family: var(--font-bangers);
     font-size: 5rem;
     font-weight: 400;
+
+    @include abstracts.breakpoint(xxl) {
+        font-size: 3.8rem;
+    }
 }

@@ -1,0 +1,562 @@
+@use '/src/view/styles/abstracts';
+
+h1.title {
+    br {
+        display: none;
+    }
+
+    @include abstracts.breakpoint(md) {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        font-size: 3.6rem;
+        text-align: center;
+
+        br {
+            display: inline;
+        }
+    }
+}
+
+.thumbnail {
+    @include abstracts.breakpoint(md) {
+        width: 100%;
+    }
+    img {
+        width: 100%;
+
+        @include abstracts.breakpoint(md) {
+            height: calc(100vh - 234px);
+            object-fit: cover;
+        }
+    }
+
+    figcaption {
+        margin-top: 8px;
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 1.5;
+
+        @include abstracts.breakpoint(md) {
+            position: relative;
+            width: 88.546%;
+            padding-left: 8px;
+            text-align: left;
+            font-size: 1.2rem;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                display: block;
+                width: 3px;
+                height: 26px;
+                background-color: #ea1c96;
+            }
+        }
+    }
+}
+
+.heading-2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.35;
+
+    @include abstracts.breakpoint(md) {
+        margin-top: 34px;
+        text-align: center;
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+}
+
+.section-article {
+    position: relative;
+    padding-bottom: 50px;
+
+    @include abstracts.breakpoint(md) {
+        padding-top: 100%;
+        padding-bottom: unset;
+    }
+
+    & + & {
+        margin-top: 84px;
+
+        @include abstracts.breakpoint(md) {
+            margin-top: 24px;
+        }
+    }
+
+    &:nth-child(odd) .toBack {
+        padding: 142px 240px 142px 92px;
+        margin-left: 60px;
+        background-color: var(--green-500);
+
+        @include abstracts.breakpoint(xxl) {
+            padding: 35px 120px 35px 46px;
+            margin-left: 30px;
+        }
+
+        @include abstracts.breakpoint(md) {
+            padding: 44% 26px 38px;
+            margin: 0;
+        }
+    }
+
+    &:nth-child(even) .toBack {
+        padding: 142px 92px 142px 240px;
+        margin-left: auto;
+        background-color: var(--pink-500);
+
+        @include abstracts.breakpoint(xxl) {
+            padding: 35px 46px 35px 120px;
+        }
+
+        @include abstracts.breakpoint(md) {
+            padding: 44% 26px 38px;
+            margin: 0;
+        }
+    }
+
+    &:nth-child(odd) .toFront {
+        figure {
+            right: 16.7%;
+
+            @include abstracts.breakpoint(md) {
+                left: 12px;
+                inset: 0 12px;
+                bottom: unset;
+                width: calc(100% - 24px);
+            }
+        }
+
+        figcaption {
+            right: calc(100% + 28px);
+
+            @include abstracts.breakpoint(xxl) {
+                right: calc(100% + 12px);
+            }
+
+            @include abstracts.breakpoint(md) {
+                right: 50%;
+                bottom: -18px;
+                transform: translateX(50%);
+            }
+        }
+    }
+
+    &:nth-child(even) .toFront {
+        figure {
+            left: 16.7%;
+
+            @include abstracts.breakpoint(md) {
+                left: 12px;
+                inset: 0 12px;
+                bottom: unset;
+                width: calc(100% - 24px);
+            }
+        }
+
+        figcaption {
+            left: calc(100% + 28px);
+
+            @include abstracts.breakpoint(xxl) {
+                left: calc(100% + 12px);
+            }
+
+            @include abstracts.breakpoint(md) {
+                left: 50%;
+                bottom: -18px;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+.toBack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 67%;
+    color: var(--white);
+
+    @include abstracts.breakpoint(xxl) {
+        gap: 28px;
+    }
+
+    @include abstracts.breakpoint(md) {
+        width: 100%;
+    }
+
+    p {
+        color: inherit;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.5;
+        text-align: center;
+
+        @include abstracts.breakpoint(xxl) {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.toFront {
+    figure {
+        position: absolute;
+        bottom: 0;
+        width: 23.52%;
+
+        img {
+            width: 100%;
+        }
+
+        figcaption {
+            position: absolute;
+            bottom: 0;
+            width: max-content;
+            font-size: 1.6rem;
+            line-height: 1.5;
+
+            @include abstracts.breakpoint(md) {
+                color: var(--white);
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+.schedule {
+    padding: 35px 0;
+    margin-top: 84px;
+
+    h2 {
+        text-align: center;
+    }
+
+    &-wrap {
+        width: 93.27%;
+        margin: 0px auto;
+
+        @include abstracts.breakpoint(md) {
+            margin-top: -24px;
+        }
+    }
+
+    &-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -16px;
+    }
+
+    &-col {
+        flex: 0 0 auto;
+        width: calc(100% / 3);
+        padding: 0 12px;
+
+        @include abstracts.breakpoint(md) {
+            width: 100%;
+            margin-top: 24px;
+        }
+    }
+
+    &-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        height: 100%;
+        padding: 37px 0;
+        border-radius: 12px;
+        box-shadow: 0px 2px 22px 0px #00000029;
+
+        @include abstracts.breakpoint(lg) {
+            width: 100%;
+        }
+
+        &-icon {
+            color: var(--green-500);
+            font-size: 7.7rem;
+
+            @include abstracts.breakpoint(xxl) {
+                font-size: 5rem;
+            }
+        }
+
+        &-separate {
+            width: 20px;
+            height: 3px;
+            background-color: var(--green-500);
+        }
+
+        &-heading {
+            margin-bottom: 4px;
+            color: var(--green-500);
+            font-size: 3.6rem;
+            font-weight: 700;
+            text-align: center;
+
+            @include abstracts.breakpoint(xxl) {
+                font-size: 2rem;
+            }
+        }
+
+        &-description {
+            font-size: 2.3rem;
+            line-height: 1.5;
+            text-align: center;
+
+            @include abstracts.breakpoint(xxl) {
+                font-size: 1.4rem;
+            }
+
+            strong {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.ticket {
+    margin-top: 84px;
+    margin-bottom: 36px;
+
+    h2 {
+        text-align: center;
+    }
+
+    &-row {
+        --ticket-row-gutter: 24px;
+        --ticket-row-space: calc(var(--ticket-row-gutter) / 2);
+        display: flex;
+        flex-wrap: wrap;
+        margin: calc(var(--ticket-row-space) * -1) calc(var(--ticket-row-space) * -1) var(--ticket-row-space);
+
+        @include abstracts.breakpoint(xxl) {
+            --ticket-row-gutter: 16px;
+        }
+
+        &--reverse {
+            @include abstracts.breakpoint(lg) {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+    &-col {
+        flex: 0 0 auto;
+        width: 50%;
+        padding: 0 var(--ticket-row-space);
+        margin-top: var(--ticket-row-space);
+
+        @include abstracts.breakpoint(lg) {
+            width: 100%;
+        }
+    }
+
+    &-card {
+        --ticket-card-size-circle: 540px;
+
+        position: relative;
+        display: flex;
+        height: 100%;
+        border-radius: 48px 0px 48px 0px;
+        overflow: hidden;
+
+        @include abstracts.breakpoint(xxl) {
+            --ticket-card-size-circle: 360px;
+        }
+
+        @include abstracts.breakpoint(xl) {
+            --ticket-card-size-circle: 260px;
+        }
+
+        @include abstracts.breakpoint(lg) {
+            --ticket-card-size-circle: 320px;
+        }
+
+        @include abstracts.breakpoint(md) {
+            --ticket-card-size-circle: 280px;
+        }
+
+        @include abstracts.breakpoint(sm) {
+            --ticket-card-size-circle: 256px;
+        }
+
+        &__left {
+            flex: 0 0 auto;
+            width: 43.15%;
+
+            @include abstracts.breakpoint(xl) {
+                width: 40%;
+            }
+        }
+
+        &__right {
+            flex: 1 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 55px 46px 24px 0;
+
+            @include abstracts.breakpoint(xxl) {
+                padding: 34px 34px 24px 0;
+            }
+
+            @include abstracts.breakpoint(xl) {
+                padding: 24px;
+                padding-left: 0;
+            }
+
+            @include abstracts.breakpoint(xs) {
+                padding: 16px 8px;
+                padding-left: 0;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: calc(var(--ticket-card-size-circle) / 2 * -1);
+            left: calc(var(--ticket-card-size-circle) / 2 * -1);
+            display: block;
+            width: var(--ticket-card-size-circle);
+            height: var(--ticket-card-size-circle);
+            border-radius: 100%;
+        }
+
+        &--green {
+            background-color: var(--green-500);
+
+            &::after {
+                background-color: #c5e0cf;
+            }
+        }
+
+        &--pink {
+            background-color: var(--pink-500);
+
+            &::after {
+                background-color: #efcfe0;
+            }
+        }
+    }
+
+    &-wrap-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(var(--ticket-card-size-circle) / 2);
+        height: calc(var(--ticket-card-size-circle) / 2);
+    }
+
+    &-image {
+        position: absolute;
+        top: -10%;
+        left: 40%;
+        transform: translate(-50%, 50%);
+        height: 60%;
+        z-index: 2;
+    }
+
+    &-heading,
+    &-sub,
+    &-description {
+        color: var(--white);
+    }
+
+    &-heading {
+        margin-bottom: 5px;
+        font-family: var(--font-bangers);
+        font-size: 4rem;
+        line-height: 1.064;
+
+        @include abstracts.breakpoint(xxl) {
+            font-size: 2rem;
+        }
+    }
+
+    &-sub {
+        margin-bottom: 11px;
+        font-size: 3.2rem;
+        font-weight: 700;
+        line-height: 1.5;
+
+        @include abstracts.breakpoint(xxl) {
+            font-size: 2rem;
+        }
+
+        @include abstracts.breakpoint(md) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &-description {
+        display: -webkit-box;
+        line-clamp: 4;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        margin-bottom: 38px;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        hyphens: auto;
+        overflow: hidden;
+
+        @include abstracts.breakpoint(xxl) {
+            font-size: 1.4rem;
+        }
+
+        @include abstracts.breakpoint(lg) {
+            height: unset;
+        }
+
+        @include abstracts.breakpoint(md) {
+            line-clamp: unset;
+            -webkit-line-clamp: unset;
+            -webkit-box-orient: unset;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.note {
+    &-heading {
+        color: var(--pink-500);
+        font-size: 2.3rem;
+        font-weight: 800;
+        line-height: 1.36;
+
+        @include abstracts.breakpoint(md) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &-content {
+        width: 83.33%;
+
+        @include abstracts.breakpoint(xxl) {
+            width: unset;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 26px;
+        }
+
+        li {
+            font-size: 1.8rem;
+            line-height: 1.5;
+
+            @include abstracts.breakpoint(md) {
+                font-size: 1.4rem;
+            }
+        }
+
+        strong {
+            font-weight: 700;
+        }
+    }
+}
