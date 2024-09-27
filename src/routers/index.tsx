@@ -7,6 +7,10 @@ import { historyRouter } from '~view/Introduce/History/router';
 import { policyRouter } from '~view/Introduce/Policy/router';
 import { introduceRouter } from '~view/Introduce/router';
 import { staffRouter } from '~view/Introduce/Staff/router';
+import { ticketExerciseRouter } from '~view/Ticket/Exercise/router';
+import { ticketGroupRouter } from '~view/Ticket/Group/router';
+import { ticketInsideRouter } from '~view/Ticket/Inside/router';
+import { ticketServiceRouter } from '~view/Ticket/Service/router';
 
 const browserRouter = createBrowserRouter([
     {
@@ -17,7 +21,16 @@ const browserRouter = createBrowserRouter([
     {
         path: '',
         Component: DefaultLayout,
-        children: [introduceRouter, historyRouter, staffRouter, policyRouter],
+        children: [
+            introduceRouter,
+            historyRouter,
+            staffRouter,
+            policyRouter,
+            ticketInsideRouter,
+            ticketGroupRouter,
+            ticketServiceRouter,
+            ticketExerciseRouter,
+        ],
     },
 ]);
 

@@ -243,11 +243,11 @@ function Sidebar() {
             },
             {
                 key: '/ticket',
-                label: <Link to='/ticket'>Giá vé</Link>,
+                label: 'Giá vé',
                 children: [
                     {
-                        key: '/ticket/inside',
-                        label: <Link to='/ticket/inside'>Vé trong công viên</Link>,
+                        key: '/ticket/inside-park',
+                        label: <Link to='/ticket/inside-park'>Vé trong công viên</Link>,
                     },
                     { key: 'ticket-1', type: 'divider' },
                     {
