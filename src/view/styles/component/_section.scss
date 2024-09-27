@@ -11,4 +11,66 @@
     @include abstracts.breakpoint(lg) {
         padding: 16px;
     }
+
+    &__description-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 227px;
+    }
+
+    &__description-title {
+        padding: 4px 0;
+        border-bottom: 1px solid var(--pink-500);
+        color: var(--gray-600);
+        font-weight: 600;
+        font-size: 2.2rem;
+        line-height: 1.5;
+    }
+
+    &__description-content {
+        font-size: 1.6rem;
+        line-height: 1.5;
+    }
+
+    &__text-content {
+        h2 {
+            margin: 40px 0 24px;
+            color: var(--pink-500);
+            font-family: var(--font-bangers);
+            font-size: 5rem;
+            line-height: 1.064;
+
+            @include abstracts.breakpoint(sm) {
+                font-size: 2.4rem;
+            }
+        }
+
+        p,
+        ul {
+            width: 67.981%;
+            font-size: 1.8rem;
+            line-height: 1.5;
+
+            @include abstracts.breakpoint(md) {
+                width: unset;
+            }
+
+            @include abstracts.breakpoint(sm) {
+                font-size: 1.4rem;
+            }
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 16px;
+            margin-bottom: 24px;
+        }
+
+        figure {
+            img {
+                width: 100%;
+            }
+        }
+    }
 }
