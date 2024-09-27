@@ -9,7 +9,7 @@
     height: 50px;
     padding-right: 16px;
     padding-left: 16px;
-    z-index: 2;
+    z-index: 3;
 
     @include abstracts.breakpoint(lg) {
         display: block;
