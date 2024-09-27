@@ -12,27 +12,6 @@
         padding: 16px;
     }
 
-    &__description-wrap {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        width: 227px;
-    }
-
-    &__description-title {
-        padding: 4px 0;
-        border-bottom: 1px solid var(--pink-500);
-        color: var(--gray-600);
-        font-weight: 600;
-        font-size: 2.2rem;
-        line-height: 1.5;
-    }
-
-    &__description-content {
-        font-size: 1.6rem;
-        line-height: 1.5;
-    }
-
     &__text-content {
         h2 {
             margin: 40px 0 24px;

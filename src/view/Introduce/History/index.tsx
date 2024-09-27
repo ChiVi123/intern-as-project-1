@@ -1,7 +1,9 @@
+import styles from './history.module.scss';
+
 import Title from 'antd/es/typography/Title';
 import classNames from 'classnames/bind';
 
-import styles from './history.module.scss';
+import { ArticleTitle } from '~components';
 
 type Service = {
     title: string;
@@ -56,20 +58,12 @@ function History() {
         <div className='section'>
             <figure className={cx('thumbnail')}>
                 <img src='/intro/history/img-1.png' alt='' />
-                <figcaption>Đầm Sen là một trong những điểm bắn pháo hoa trong các sự kiện lớn của cả nước.</figcaption>
             </figure>
 
-            <div className={cx('top-wrap')}>
-                <Title level={1} className={cx('title')}>
-                    Lịch sử hình thành
-                </Title>
-                <div className='section__description-wrap'>
-                    <span className='section__description-title'>Mô tả</span>
-                    <p className='section__description-content'>
-                        Đầm Sen là một trong những điểm bắn pháo hoa trong các sự kiện lớn của cả nước.
-                    </p>
-                </div>
-            </div>
+            <ArticleTitle
+                title='Lịch sử hình thành'
+                description='Đầm Sen là một trong những điểm bắn pháo hoa trong các sự kiện lớn của cả nước.'
+            />
 
             <div dangerouslySetInnerHTML={{ __html: textContent }} className='section__text-content'></div>
 

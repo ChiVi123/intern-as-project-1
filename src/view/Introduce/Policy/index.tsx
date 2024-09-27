@@ -1,7 +1,8 @@
-import Title from 'antd/es/typography/Title';
+import styles from './policy.module.scss';
+
 import classNames from 'classnames/bind';
 
-import styles from './policy.module.scss';
+import { ArticleTitle } from '~components';
 
 const cx = classNames.bind(styles);
 
@@ -10,24 +11,12 @@ function Policy() {
         <div className='section'>
             <figure className={cx('thumbnail')}>
                 <img src='/intro/policy/img-1.png' alt='' />
-                <figcaption>
-                    Chính sách bảo mật này nhằm mục đích giúp bạn hiểu rõ những thông tin chúng tôi thu thập, lý do
-                    chúng tôi thu thập và cách bạn có thể cập nhật, quản lý, xuất và xóa thông tin của mình.
-                </figcaption>
             </figure>
 
-            <div className={cx('top-wrap')}>
-                <Title level={1} className={cx('title')}>
-                    Chính sách bảo mật
-                </Title>
-                <div className='section__description-wrap'>
-                    <span className='section__description-title'>Mô tả</span>
-                    <p className='section__description-content'>
-                        Chính sách bảo mật này nhằm mục đích giúp bạn hiểu rõ những thông tin chúng tôi thu thập, lý do
-                        chúng tôi thu thập và cách bạn có thể cập nhật, quản lý, xuất và xóa thông tin của mình.
-                    </p>
-                </div>
-            </div>
+            <ArticleTitle
+                title='Chính sách bảo mật'
+                description='Chính sách bảo mật này nhằm mục đích giúp bạn hiểu rõ những thông tin chúng tôi thu thập, lý do chúng tôi thu thập và cách bạn có thể cập nhật, quản lý, xuất và xóa thông tin của mình.'
+            />
 
             <div className='section__text-content'>
                 <h2>Chúng tôi là ai?</h2>
