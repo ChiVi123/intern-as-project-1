@@ -79,12 +79,16 @@
     position: relative;
     display: flex;
     justify-content: center;
+
     width: 78.75%;
     padding: 22px 0 33px;
     margin: 0 auto;
     background-color: var(--exercise-card-theme);
     border-radius: 0px 0px 22.94px 22.94px;
+
     color: var(--white);
+
+    box-shadow: 0px 5.1px 10.2px 0px #00000033;
 
     @include abstracts.breakpoint(xxl) {
         padding: 18px 0 26px;
