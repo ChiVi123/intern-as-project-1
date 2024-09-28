@@ -34,6 +34,7 @@
 
         a {
             color: #005aab;
+            text-decoration: underline;
         }
 
         b,
@@ -74,6 +75,35 @@
         figure {
             img {
                 width: 100%;
+            }
+        }
+
+        table {
+            width: 100%;
+
+            th {
+                font-weight: 700;
+                font-size: 2rem;
+                line-height: 1.5;
+                text-align: left;
+
+                @include abstracts.breakpoint(md) {
+                    font-size: 1.6rem;
+                }
+            }
+
+            td {
+                font-size: 1.8rem;
+                line-height: 1.5;
+
+                @include abstracts.breakpoint(md) {
+                    font-size: 1.4rem;
+                }
+            }
+
+            th,
+            td {
+                padding: 10px 0;
             }
         }
     }
