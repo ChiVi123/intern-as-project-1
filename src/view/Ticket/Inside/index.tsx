@@ -3,52 +3,27 @@ import styles from './inside.module.scss';
 import classNames from 'classnames/bind';
 
 import { ArticleThumbnail, ArticleTitle } from '~components';
-import { CheckIcon, XmarkIcon } from '~icons';
+import { ListCard } from '../components';
+import Card from '../components/ListCard/type';
 
-type TicketType = {
-    title: string;
-    color: 'green' | 'pink' | 'blue';
-    list: { type: 'allow' | 'disallow'; label: string }[];
-    htmlContent: string;
-};
-
-const ticketTypes: TicketType[] = [
+const cards: Card[] = [
     {
-        title: 'VÉ THAM QUAN',
+        flagContent: 'VÉ THAM QUAN',
         color: 'green',
-        list: [
-            { type: 'allow', label: 'Tham quan trong ngày' },
-            { type: 'disallow', label: 'Bao gồm trò chơi' },
-            { type: 'disallow', label: 'Dịch vụ xe điện' },
-        ],
-        htmlContent:
-            '<ul><li><b>Mua từ cổng:</b><ul><li>120.000 VNĐ/người (&gt;1.4m)</li><li>80.000 VNĐ/trẻ em (&lt;1.4m)</li></ul></li><li><b>Mua từ cổng Công viên nước:</b><ul><li>180.000 VNĐ/người (&gt;1.4m)</li><li>50.000 VNĐ/trẻ em (&lt;1.4m)</li></ul></li></ul>',
+        content:
+            '<p>✔️ Tham quan trong ngày</p><p>❌ <span style="color:var(--gray-300);text-decoration:line-through">Bao gồm trò chơi</span></p><p>❌<span style="color:var(--gray-300);text-decoration:line-through">Dịch vụ xe điện</span></p><ul><li><strong>Mua từ cổng:</strong><ul><li>120.000 VNĐ/người (&gt;1.4m)</li><li>80.000 VNĐ/trẻ em (&lt;1.4m)</li></ul></li><li><strong>Mua từ cổng Công viên nước:</strong><ul><li>80.000 VNĐ/người (&gt;1.4m)</li><li>50.000 VNĐ/trẻ em (&lt;1.4m)</li></ul></li></ul>',
     },
     {
-        title: 'VÉ TRỌN GÓI',
+        flagContent: 'VÉ TRỌN GÓI',
         color: 'pink',
-        list: [
-            { type: 'allow', label: 'Tham quan trong ngày' },
-            { type: 'allow', label: 'Bao gồm trò chơi' },
-            { type: 'disallow', label: 'Thủy cung' },
-            { type: 'disallow', label: 'Dịch vụ xe điện' },
-        ],
-        htmlContent:
-            '<ul><li><b>Mua từ cổng:</b><ul><li>260.000 VNĐ/người (&gt;1.4m)</li><li>180.000 VNĐ/người (&lt;1.4m)</li></ul></li><li><b>Mua từ cổng Công viên nước:</b><ul><li>220.000 VNĐ/người (&gt;1.4m)</li><li>150.000 VNĐ/người (&lt;1.4m)</li></ul></li><li><b>Mua trong công viên:</b><ul><li>150.000 VNĐ/người</li></ul></li></ul>',
+        content:
+            '<p>✔️ Tham quan trong ngày</p><p>✔️ Bao gồm trò chơi</p><p>❌ <span style="color:var(--gray-300);text-decoration:line-through">Thủy cung</span></p><p>❌ <span style="color:var(--gray-300);text-decoration:line-through">Dịch vụ xe điện</span></p><ul><li><strong>Mua từ cổng:</strong><ul><li>260.000 VNĐ/người (&gt;1.4m)</li><li>180.000 VNĐ/người (&lt;1.4m)</li></ul></li><li><strong>Mua từ cổng Công viên nước:</strong><ul><li>220.000 VNĐ/người (&gt;1.4m)</li><li>150.000 VNĐ/người (&lt;1.4m)</li></ul></li><li><strong>Mua trong công viên:</strong><ul><li>150.000 VNĐ/người</li></ul></li></ul>',
     },
     {
-        title: 'VÉ SILVER',
+        flagContent: 'VÉ SILVER',
         color: 'blue',
-        list: [
-            { type: 'allow', label: 'Tham quan trong ngày' },
-            { type: 'allow', label: 'Bao gồm trò chơi' },
-            { type: 'allow', label: 'Lối đi riêng' },
-            { type: 'disallow', label: 'Thủy cung' },
-            { type: 'disallow', label: 'Massage cá' },
-            { type: 'disallow', label: 'Dịch vụ xe điện' },
-        ],
-        htmlContent:
-            '<ul><li><b>Mua từ cổng:</b><ul><li>380.000 VNĐ/người (&gt;1.4m)</li><li>240.000 VNĐ/trẻ em (&lt;1.4m)</li></ul></li><li><b>Mua từ cổng Công viên nước:</b><ul><li>340.000 VNĐ/người (&gt;1.4m)</li><li>220.000 VNĐ/trẻ em (&lt;1.4m)</li></ul></li><li><b>Mua trong công viên:</b><ul><li>280.000 VNĐ/người</li></ul></li></ul>',
+        content:
+            '<p>✔️ Tham quan trong ngày</p><p>✔️ Bao gồm trò chơi</p><p>✔️ Lối đi riêng</p><p>❌ <span style="color:var(--gray-300);text-decoration:line-through">Thủy cung</span></p><p>❌ <span style="color:var(--gray-300);text-decoration:line-through">Massage cá</span></p><p>❌ <span style="color:var(--gray-300);text-decoration:line-through">Dịch vụ xe điện</span></p><ul><li><strong>Mua từ cổng:</strong><ul><li>380.000 VNĐ/người (&gt;1.4m)</li><li>240.000 VNĐ/trẻ em (&lt;1.4m)</li></ul></li><li><strong>Mua từ cổng Công viên nước:</strong><ul><li>340.000 VNĐ/người (&gt;1.4m)</li><li>220.000 VNĐ/trẻ em (&lt;1.4m)</li></ul></li><li><strong>Mua trong công viên:</strong><ul><li>280.000 VNĐ/người</li></ul></li></ul>',
     },
 ];
 const noteContent: string =
@@ -65,28 +40,7 @@ function Inside() {
                 description='Đầm Sen là điểm check-in được ưa chuộng của giới trẻ hiện nay.'
             />
 
-            <div className={cx('row')}>
-                {ticketTypes.map((ticket) => (
-                    <div key={'ticket-type' + ticket.title} className={cx('col')}>
-                        <div className={cx('card', `card--${ticket.color}`)}>
-                            <button className={cx('button')}>{ticket.title}</button>
-                            <ul className={cx('list')}>
-                                {ticket.list.map((item) => (
-                                    <li key={item.label} className={cx('item', `item--${item.type}`)}>
-                                        {item.type === 'allow' ? <CheckIcon /> : <XmarkIcon />}
-                                        {item.label}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <div
-                                className={cx('text-content')}
-                                dangerouslySetInnerHTML={{ __html: ticket.htmlContent }}
-                            ></div>
-                        </div>
-                    </div>
-                ))}
-            </div>
+            <ListCard items={cards} />
 
             <h2 className={cx('note-heading')}>CHÚ Ý:</h2>
 
