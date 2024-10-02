@@ -18,8 +18,6 @@ import { ArrowIcon } from '~icons';
 
 import styles from './menu-transition-group.module.scss';
 
-type NavItemType = { key: string; parentKey?: string; toLink?: string; goTo?: string; label: string };
-type TransitionGroupType = { groupname: string; className: string; navItems: NavItemType[] };
 type MenuTransitionGroupContextType = {
     currentName: string | undefined;
     mapPath: Map<string, string[]>;
@@ -27,19 +25,15 @@ type MenuTransitionGroupContextType = {
     setName: Dispatch<SetStateAction<string | undefined>>;
 };
 
-interface IMenuProviderProps {
-    name?: string;
-    timeout?: number;
-    defaultName?: string;
-    items: TransitionGroupType[];
-    onNameChange?: (value: string) => void;
-}
+const initContext: MenuTransitionGroupContextType = {
+    currentName: '',
+    mapPath: new Map<string, string[]>(),
+    timeout: 500,
+    setName: () => {},
+};
+const MenuTransitionGroupContext = createContext<MenuTransitionGroupContextType>(initContext);
 
-interface IMenuProps {
-    name: string;
-    prefixClass: string;
-    children: ReactNode;
-}
+// MenuItemTransitionGroup
 
 interface IMenuItemProps {
     itemId: string;
@@ -50,14 +44,6 @@ interface IMenuItemProps {
     isSub?: boolean;
     children: ReactNode;
 }
-
-const initContext: MenuTransitionGroupContextType = {
-    currentName: '',
-    mapPath: new Map<string, string[]>(),
-    timeout: 500,
-    setName: () => {},
-};
-const MenuTransitionGroupContext = createContext<MenuTransitionGroupContextType>(initContext);
 const cx = classNames.bind(styles);
 
 function MenuItemTransitionGroup({ itemId, goTo, iconLeft, iconRight, toHref, isSub, children }: IMenuItemProps) {
@@ -130,6 +116,14 @@ function MenuItemTransitionGroup({ itemId, goTo, iconLeft, iconRight, toHref, is
     );
 }
 
+// MenuTransitionGroup
+
+interface IMenuProps {
+    name: string;
+    prefixClass: string;
+    children: ReactNode;
+}
+
 function MenuTransitionGroup({ name, prefixClass, children }: IMenuProps) {
     const { currentName, timeout } = useContext(MenuTransitionGroupContext);
     const nodeRef = useRef(null);
@@ -143,6 +137,19 @@ function MenuTransitionGroup({ name, prefixClass, children }: IMenuProps) {
             )}
         </Transition>
     );
+}
+
+// MenuTransitionGroupProvider
+
+type NavItemType = { key: string; parentKey?: string; toLink?: string; goTo?: string; label: string };
+type TransitionGroupType = { groupname: string; className: string; navItems: NavItemType[] };
+
+interface IMenuProviderProps {
+    name?: string;
+    timeout?: number;
+    defaultName?: string;
+    items: TransitionGroupType[];
+    onNameChange?: (value: string) => void;
 }
 
 function MenuTransitionGroupProvider({ name, defaultName, timeout = 500, items, onNameChange }: IMenuProviderProps) {
