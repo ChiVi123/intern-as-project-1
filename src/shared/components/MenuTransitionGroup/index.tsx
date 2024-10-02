@@ -50,6 +50,14 @@ function MenuItemTransitionGroup({ itemId, goTo, iconLeft, iconRight, toHref, is
     const { mapPath, setName } = useContext(MenuTransitionGroupContext);
     const [active, setActive] = useState<boolean>(false);
     const { pathname } = useLocation();
+    const componentContentClassNames: string = useMemo(
+        () =>
+            cx('item-text', {
+                'item-text--sm': isSub,
+                'item-text--lg': !isSub,
+            }),
+        [isSub],
+    );
 
     useEffect(() => {
         if (isSub) {
@@ -88,24 +96,11 @@ function MenuItemTransitionGroup({ itemId, goTo, iconLeft, iconRight, toHref, is
                 </span>
             )}
             {toHref ? (
-                <NavLink
-                    to={toHref}
-                    className={cx('item-text', {
-                        'item-text--sm': isSub,
-                        'item-text--lg': !isSub,
-                    })}
-                >
+                <NavLink to={toHref} className={componentContentClassNames}>
                     {children}
                 </NavLink>
             ) : (
-                <span
-                    className={cx('item-text', {
-                        'item-text--sm': isSub,
-                        'item-text--lg': !isSub,
-                    })}
-                >
-                    {children}
-                </span>
+                <span className={componentContentClassNames}>{children}</span>
             )}
             {iconRight && (
                 <span className={cx('item-icon')} onClick={() => handleClick(goTo)}>
