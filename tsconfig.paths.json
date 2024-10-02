@@ -7,6 +7,9 @@
             "~helper": ["./src/shared/helper"],
             "~helper/*": ["./src/shared/helper/*"],
 
+            "~hook": ["./src/shared/hook"],
+            "~hook/*": ["./src/shared/hook/*"],
+
             "~icons": ["./src/shared/assets/icons"],
             "~icons/*": ["./src/shared/assets/icons/*"],
 

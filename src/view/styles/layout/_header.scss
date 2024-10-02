@@ -28,11 +28,20 @@
                 padding: 12px 16px 6px 16px;
                 border: none;
 
+                .ant-drawer-header-title {
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                }
+
                 .ant-drawer-close {
                     margin-right: 0;
-                    margin-left: auto;
                     padding: 0;
                     color: var(--white);
+                }
+
+                .ant-drawer-title {
+                    flex: 0;
+                    line-height: 1;
                 }
             }
         }
@@ -41,12 +50,15 @@
             &.ant-drawer-content {
                 background-color: var(--green-500);
                 color: var(--white);
+                overflow: hidden;
             }
         }
 
         &-body {
             &.ant-drawer-body {
+                position: relative;
                 padding: 76px 16px 0px;
+                overflow: hidden;
             }
         }
     }
