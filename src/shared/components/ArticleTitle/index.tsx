@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 function ArticleTitle({ title, description }: IProps) {
     return (
         <div className={cx('wrap')}>
-            <Title level={1} className={cx('title')}>
+            <Title level={1} role='heading' className={cx('title')}>
                 {title}
             </Title>
             <div className={cx('description-wrap')}>
