@@ -305,9 +305,9 @@ function Sidebar() {
             <div className={cx('modal-wrapper')}>
                 <Button className={cx('modal-btn')} onClick={handleOpen}>
                     {modalOpen ? (
-                        <MenuIcon className={cx('modal-icon')} />
-                    ) : (
                         <XmarkLargeIcon className={cx('modal-icon')} />
+                    ) : (
+                        <MenuIcon className={cx('modal-icon')} />
                     )}
                 </Button>
 
