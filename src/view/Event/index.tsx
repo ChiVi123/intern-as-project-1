@@ -94,7 +94,12 @@ function Event() {
 
             <ul className={cx('carousel-3d-dots')}>
                 <li className={cx('carousel-3d-arrow')}>
-                    <Button type='text' className={cx('carousel-3d-button')} onClick={handleBackToSlide}>
+                    <Button
+                        type='text'
+                        aria-label='button-previous-top-carousel'
+                        className={cx('carousel-3d-button')}
+                        onClick={handleBackToSlide}
+                    >
                         <ArrowNarrowLeftIcon />
                     </Button>
                 </li>
@@ -106,7 +111,12 @@ function Event() {
                     ></li>
                 ))}
                 <li className={cx('carousel-3d-arrow')}>
-                    <Button type='text' className={cx('carousel-3d-button')} onClick={handleGoToSlide}>
+                    <Button
+                        type='text'
+                        aria-label='button-next-top-carousel'
+                        className={cx('carousel-3d-button')}
+                        onClick={handleGoToSlide}
+                    >
                         <ArrowNarrowLeftIcon className='rotate-180' />
                     </Button>
                 </li>
