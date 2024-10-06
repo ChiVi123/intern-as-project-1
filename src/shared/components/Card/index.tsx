@@ -32,7 +32,7 @@ function Card({ id, imageSrc, title, description, category, date, short, selfCol
                 title={
                     <>
                         <h3>{title}</h3>
-                        {short && <span className={cx('small-text', 'small-text--title')}>{date}</span>}
+                        {short && <span className={cx('small-text')}>{date}</span>}
                     </>
                 }
                 description={short || description}
