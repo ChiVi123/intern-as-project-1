@@ -139,6 +139,17 @@ function Event() {
                 ))}
             </Row>
 
+            <div className={cx('article-list-navigate')}>
+                <a href='#!' className={cx('article-list-navigate-link')}>
+                    <ArrowNarrowLeftIcon />
+                    Phượng hoàng bay
+                </a>
+                <a href='#!' className={cx('article-list-navigate-link')}>
+                    Tàu vượt thác
+                    <ArrowNarrowLeftIcon className='rotate-180' />
+                </a>
+            </div>
+
             <h2 className={cx('heading-2')}>Có thể bạn thích</h2>
 
             <CarouselAntd
