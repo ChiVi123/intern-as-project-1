@@ -17,7 +17,7 @@ function ListCard({ items, colsBreakPointMd = 1, size = 'md', isIcon, isTitle }:
         <div className={cx('list')}>
             <div className={cx('row')}>
                 {items.map((card) => (
-                    <div key={'card-info' + card.heading} className={cx('item', `item--cols-${colsBreakPointMd}`)}>
+                    <div key={'card-info' + card.id} className={cx('item', `item--cols-${colsBreakPointMd}`)}>
                         <div className={cx('card', `card--${card.color}`)}>
                             <div
                                 dangerouslySetInnerHTML={{ __html: card.flagContent }}

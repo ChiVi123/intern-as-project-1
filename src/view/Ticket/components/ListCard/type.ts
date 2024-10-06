@@ -1,4 +1,5 @@
 type Card = {
+    id: string;
     flagContent: string;
     heading?: string;
     content: string;

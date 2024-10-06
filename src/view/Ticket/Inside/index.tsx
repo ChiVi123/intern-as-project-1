@@ -8,18 +8,21 @@ import Card from '../components/ListCard/type';
 
 const cards: Card[] = [
     {
+        id: '3c0e60b4-56c6-558d-866c-dce93cf07c84',
         flagContent: 'VÉ THAM QUAN',
         color: 'green',
         content:
             '<p>✔️ Tham quan trong ngày</p><p>❌ <span style="color:var(--gray-300);text-decoration:line-through">Bao gồm trò chơi</span></p><p>❌<span style="color:var(--gray-300);text-decoration:line-through">Dịch vụ xe điện</span></p><ul><li><strong>Mua từ cổng:</strong><ul><li>120.000 VNĐ/người (&gt;1.4m)</li><li>80.000 VNĐ/trẻ em (&lt;1.4m)</li></ul></li><li><strong>Mua từ cổng Công viên nước:</strong><ul><li>80.000 VNĐ/người (&gt;1.4m)</li><li>50.000 VNĐ/trẻ em (&lt;1.4m)</li></ul></li></ul>',
     },
     {
+        id: '0e8b7944-dc70-5bf1-984c-1d5acc82bcf2',
         flagContent: 'VÉ TRỌN GÓI',
         color: 'pink',
         content:
             '<p>✔️ Tham quan trong ngày</p><p>✔️ Bao gồm trò chơi</p><p>❌ <span style="color:var(--gray-300);text-decoration:line-through">Thủy cung</span></p><p>❌ <span style="color:var(--gray-300);text-decoration:line-through">Dịch vụ xe điện</span></p><ul><li><strong>Mua từ cổng:</strong><ul><li>260.000 VNĐ/người (&gt;1.4m)</li><li>180.000 VNĐ/người (&lt;1.4m)</li></ul></li><li><strong>Mua từ cổng Công viên nước:</strong><ul><li>220.000 VNĐ/người (&gt;1.4m)</li><li>150.000 VNĐ/người (&lt;1.4m)</li></ul></li><li><strong>Mua trong công viên:</strong><ul><li>150.000 VNĐ/người</li></ul></li></ul>',
     },
     {
+        id: '364bbd24-a883-51fd-901a-64513adae3c1',
         flagContent: 'VÉ SILVER',
         color: 'blue',
         content:
