@@ -73,8 +73,15 @@
         }
 
         figure {
+            margin-bottom: 40px;
+
             img {
                 width: 100%;
+            }
+
+            figcaption {
+                margin-top: 12px;
+                text-align: center;
             }
         }
 
