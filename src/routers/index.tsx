@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import { DefaultLayout, LayoutNoFooter } from '~layout';
+import { eventRouter } from '~view/Event/router';
 import { exploreRouter } from '~view/Explore/router';
 import { homeRouter } from '~view/Home/router';
 import { historyRouter } from '~view/Introduce/History/router';
@@ -30,6 +31,7 @@ const browserRouter = createBrowserRouter([
             ticketGroupRouter,
             ticketServiceRouter,
             ticketExerciseRouter,
+            eventRouter,
         ],
     },
 ]);

@@ -1,0 +1,29 @@
+.card-self-col {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.footer {
+    margin-top: 3px;
+}
+
+.small-text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: clamp(1.2rem, 1vw - 1rem, 1.6rem);
+    font-weight: 700;
+    line-height: 1.5;
+
+    span {
+        font-size: 1.6rem;
+    }
+
+    &--pink {
+        color: var(--pink-500);
+    }
+
+    &--title {
+        flex: 1;
+    }
+}
