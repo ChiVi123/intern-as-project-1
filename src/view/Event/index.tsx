@@ -160,6 +160,13 @@ function Event() {
                             slidesToShow: 2,
                         },
                     },
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            arrows: false,
+                            slidesToShow: 1,
+                        },
+                    },
                 ]}
                 prevArrow={<Arrow direction='left' />}
                 nextArrow={<Arrow direction='right' />}
