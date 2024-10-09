@@ -1,13 +1,12 @@
 import { default as Carousel, Settings, default as Slider } from '@ant-design/react-slick';
 import { CSSProperties, useEffect, useRef, useState } from 'react';
-import { ArrowLeftIcon, ArrowRightIcon } from '~icons';
+import { ChevronLeftIcon } from '~icons';
 
 type ItemThumbnailType = { id: string; imageSrc: string; caption: string };
 
 interface IAntdArrowProps {
     currentSlide?: number;
     slideCount?: number;
-    style?: CSSProperties;
 }
 interface IArrowProps {
     direction: 'left' | 'right';
@@ -24,12 +23,12 @@ interface IProps {
     marginSlider?: string;
     items: ItemThumbnailType[];
 }
-const Arrow = ({ currentSlide, direction, slideCount, style, ...carouselProps }: IArrowProps & IAntdArrowProps) => (
+const Arrow = ({ currentSlide, direction, slideCount, ...carouselProps }: IArrowProps & IAntdArrowProps) => (
     <>
         {direction === 'left' ? (
-            <ArrowLeftIcon aria-label='arrow-left' style={{ ...style, display: 'inline-flex' }} {...carouselProps} />
+            <ChevronLeftIcon aria-label='arrow-left' {...carouselProps} />
         ) : (
-            <ArrowRightIcon aria-label='arrow-right' style={{ ...style, display: 'inline-flex' }} {...carouselProps} />
+            <ChevronLeftIcon aria-label='arrow-right' {...carouselProps} />
         )}
     </>
 );
@@ -37,6 +36,7 @@ const Arrow = ({ currentSlide, direction, slideCount, style, ...carouselProps }:
 const ThumbnailPaging = ({ item, baseURL, pathname, style }: ISlideProps) => (
     <div style={{ ...style, display: 'flex' }}>
         <img src={baseURL + pathname + item.imageSrc} alt={item.caption} />
+        <div>{item.caption}</div>
     </div>
 );
 
@@ -66,6 +66,7 @@ function CarouselThumbnail({ widthSlider, marginSlider, items }: IProps) {
                     slidesToShow={1}
                     nextArrow={<Arrow direction='right' />}
                     prevArrow={<Arrow direction='left' />}
+                    responsive={[{ breakpoint: 576, settings: { dots: true, dotsClass: 'carousel-thumbnail__dots' } }]}
                     className='carousel-thumbnail__slider'
                 >
                     {items.map((item) => (
@@ -84,6 +85,7 @@ function CarouselThumbnail({ widthSlider, marginSlider, items }: IProps) {
                     focusOnSelect
                     arrows={false}
                     slidesToShow={5}
+                    responsive={[{ breakpoint: 576, settings: { slidesToShow: 1, focusOnSelect: false } }]}
                     className='carousel-thumbnail__paging'
                 >
                     {items.map((item) => (

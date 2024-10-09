@@ -168,54 +168,74 @@ function Staff() {
 
             <ArticleTitle title='Thành viên' description='Thông tin về các đơn vị thành viên của CVVH Đầm Sen' />
 
-            <div className='section__text-content'>
-                <h2>nhà hàng thủy tạ</h2>
+            <div className={cx('section-content')}>
+                <div className='text-content'>
+                    <h2>nhà hàng thủy tạ</h2>
 
-                <p style={{ display: 'inline-block' }}>
-                    Đơn vị thành viên đầu tiên của Đầm Sen là Nhà hàng Thủy tạ nằm ở cổng số 2 của CVVH Đầm Sen. Địa chỉ
-                    số 3 Hòa Bình, Quận 11, TP.HCM. Ra đời từ năm 1985, nằm trong lòng CVVH Đầm Sen (thuộc Công ty cổ
-                    phần Dịch vụ & Du lịch Phú Thọ quản lý), nhà hàng Thủy Tạ đã định hình thương hiệu và không ngừng
-                    phát triển. Hàng năm, đội ngũ nhân viên của nhà hàng đều được đào tạo nâng cao về nghiệp vụ cũng như
-                    thái độ phục vụ để đáp ứng mọi yêu cầu của thực khách. Chính vì vậy, suốt nghiều năm qua, nhà hàng
-                    Thủy Tạ Đầm Sen vẫn là cái tên được lựa chọn hàng đầu của các cá nhân và cơ quan đơn vị khi đặt tiệc
-                    tổ chức sự kiện.
-                </p>
-                <img
-                    src='https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/introduce%2Fstaff-logo-thuy-ta-min.png?alt=media&token=6f46d73a-bb2b-4a24-9259-3b77c10a7ea5'
-                    alt=''
-                    data-role='logo-inline'
-                    style={{ width: 163, height: 163, marginLeft: 80, verticalAlign: 'top' }}
-                />
+                    <p style={{ width: '82.4%' }}>
+                        <img
+                            src='https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/introduce%2Fstaff-logo-thuy-ta-min.png?alt=media&token=6f46d73a-bb2b-4a24-9259-3b77c10a7ea5'
+                            alt=''
+                            data-role='logo-inline'
+                            width={163}
+                            height={163}
+                            style={{
+                                marginLeft: 80,
+                                marginRight: 'auto',
+                                float: 'right',
+                            }}
+                        />
+                    </p>
+                    <p style={{ width: '66.1455%' }}>
+                        Đơn vị thành viên đầu tiên của Đầm Sen là Nhà hàng Thủy tạ nằm ở cổng số 2 của CVVH Đầm Sen. Địa
+                        chỉ số 3 Hòa Bình, Quận 11, TP.HCM. Ra đời từ năm 1985, nằm trong lòng CVVH Đầm Sen (thuộc Công
+                        ty cổ phần Dịch vụ & Du lịch Phú Thọ quản lý), nhà hàng Thủy Tạ đã định hình thương hiệu và
+                        không ngừng phát triển. Hàng năm, đội ngũ nhân viên của nhà hàng đều được đào tạo nâng cao về
+                        nghiệp vụ cũng như thái độ phục vụ để đáp ứng mọi yêu cầu của thực khách. Chính vì vậy, suốt
+                        nghiều năm qua, nhà hàng Thủy Tạ Đầm Sen vẫn là cái tên được lựa chọn hàng đầu của các cá nhân
+                        và cơ quan đơn vị khi đặt tiệc tổ chức sự kiện.
+                    </p>
+                </div>
             </div>
 
-            <ButtonMore type='primary' size='small' />
+            <div className={cx('button-more')}>
+                <ButtonMore type='primary' size='small' />
+            </div>
 
             <div className={cx('carousel-wrap')}>
                 <CarouselThumbnail widthSlider='59.216%' items={thuyTaThumbnails} />
             </div>
 
-            <div className='section__text-content'>
-                <h2>cà phê vườn đá</h2>
+            <div className={cx('section-content')}>
+                <div className='text-content'>
+                    <h2>cà phê vườn đá</h2>
 
-                <p style={{ display: 'inline-block' }}>
-                    Cà phê Vườn Đá bắt đầu hoạt động vào năm 2009. Đây được xem là cà phê rộng và “thiên nhiên” nhất tại
-                    TP.HCM. Khuôn viên quán là một phần diện tích của CVVH Đầm Sen. Kiến trúc nhà sàn bên cạnh những
-                    tảng đá thiên nhiên với đa dạng hình thù. Đồng thời có dòng suối chảy róc rách cùng những loài chim
-                    thả tự nhiên. Khách đến có thể cảm nhận như một “Đà Lạt thu nhỏ”. Đồng thời, vào mỗi tối và sáng thứ
-                    bảy - chủ nhật đều có biểu diễn nhạc sống.
-                    <br />
-                    Năm 2018, đơn vị thành viên của Đầm Sen này đã khai trương thêm gian triển lãm tranh đá quý để khách
-                    tham quan có điều kiện thưỡng lãm.
-                </p>
-                <img
-                    src='https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/introduce%2Fstaff-logo-vuon-da-min.png?alt=media&token=87a84b25-ce2c-457b-9699-49c53300fe03'
-                    alt=''
-                    data-role='logo-inline'
-                    style={{ width: 300, height: 106, marginLeft: 80, verticalAlign: 'top' }}
-                />
+                    <p style={{ width: '91.8%' }}>
+                        <img
+                            src='https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/introduce%2Fstaff-logo-vuon-da-min.png?alt=media&token=87a84b25-ce2c-457b-9699-49c53300fe03'
+                            alt=''
+                            data-role='logo-inline'
+                            width={300}
+                            height={106}
+                            style={{ marginLeft: 80, float: 'right' }}
+                        />
+                    </p>
+                    <p style={{ width: '66.1455%' }}>
+                        Cà phê Vườn Đá bắt đầu hoạt động vào năm 2009. Đây được xem là cà phê rộng và “thiên nhiên” nhất
+                        tại TP.HCM. Khuôn viên quán là một phần diện tích của CVVH Đầm Sen. Kiến trúc nhà sàn bên cạnh
+                        những tảng đá thiên nhiên với đa dạng hình thù. Đồng thời có dòng suối chảy róc rách cùng những
+                        loài chim thả tự nhiên. Khách đến có thể cảm nhận như một “Đà Lạt thu nhỏ”. Đồng thời, vào mỗi
+                        tối và sáng thứ bảy - chủ nhật đều có biểu diễn nhạc sống.
+                        <br />
+                        Năm 2018, đơn vị thành viên của Đầm Sen này đã khai trương thêm gian triển lãm tranh đá quý để
+                        khách tham quan có điều kiện thưỡng lãm.
+                    </p>
+                </div>
             </div>
 
-            <ButtonMore type='primary' size='small' />
+            <div className={cx('button-more')}>
+                <ButtonMore type='primary' size='small' />
+            </div>
 
             <div className={cx('carousel-wrap')}>
                 <CarouselThumbnail widthSlider='59.216%' items={vuonDaThumbnails} />

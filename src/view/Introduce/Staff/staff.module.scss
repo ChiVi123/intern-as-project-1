@@ -1,6 +1,35 @@
+@use '/src/view/styles/abstracts';
+
 .carousel-wrap {
     width: 91.8424%;
     margin: 88px auto 86px;
+
+    @include abstracts.breakpoint(md) {
+        width: 100%;
+    }
+}
+
+.section-content {
+    p {
+        @include abstracts.breakpoint(md) {
+            width: 100% !important;
+            text-align: center !important;
+        }
+    }
+
+    img {
+        @include abstracts.breakpoint(md) {
+            margin-left: auto !important;
+            float: unset !important;
+        }
+    }
+}
+
+.button-more {
+    @include abstracts.breakpoint(lg) {
+        width: fit-content;
+        margin: 0 auto;
+    }
 }
 
 .heading-2 {
