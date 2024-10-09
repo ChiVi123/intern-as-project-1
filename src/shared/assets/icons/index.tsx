@@ -3,6 +3,7 @@ export { default as ArrowLeftIcon } from './ArrowLeft';
 export { default as ArrowNarrowLeftIcon } from './ArrowNarrowLeft';
 export { default as ArrowRightIcon } from './ArrowRight';
 export { default as CheckIcon } from './Check';
+export { default as ChevronLeftIcon } from './ChevronLeft';
 export { default as ClockIcon } from './Clock';
 export { default as ClockActionIcon } from './ClockAction';
 export { default as ClockBuyTicketIcon } from './ClockBuyTicket';
