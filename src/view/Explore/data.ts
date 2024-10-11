@@ -498,3 +498,449 @@ export const tips: TipType[] = [
         position: { top: '82%', left: '94%' },
     },
 ];
+
+export const articles: Record<string, ArticleType> = {
+    'ca-chep-nhao-lon': {
+        prev: { label: 'Phượng hoàng bay', value: '#!' },
+        next: { label: 'Tàu vượt thác', value: '#!' },
+        blocks: [
+            {
+                id: '8883fe56-3af2-5cdc-8b2b-f5064da3930d',
+                type: 'thumbnail',
+                data: {
+                    src: 'https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/explore%2Fca-chep-nhao-lon-thumbnail-min.png?alt=media&token=b0d0f90f-247d-4447-b683-6771d6ef5a8a',
+                    alt: '',
+                },
+            },
+            {
+                id: '0e0f7131-f466-55c5-bc5a-8d260a898d28',
+                type: 'title',
+                data: {
+                    title: 'cá chép nhào lộn',
+                    description: 'Trò chơi Cá chép nhào lộn tại CVVH Đầm Sen',
+                    category: 'Cảm giác mạnh',
+                    date: '11/02/2020',
+                },
+            },
+            {
+                id: '346aad9e-13df-5944-9358-317be7c1055e',
+                type: 'text-content',
+                data: {
+                    html: '<p style="width: 66.689%;">Cá chép nhào lộn là trò chơi cảm giác mạnh do Công ty Cổ phần Dịch vụ Du lịch Phú Thọ (Phuthotourist) đầu tư tại CVVH Đầm Sen. Đây là trò chơi hình thức con lắc Pendulum. Trò chơi gồm 2 con tàu hình cá chép, đong đưa theo trục đứng. Trò chơi này cũng tương tự như Phượng hoàng bay, nhưng có thể đánh vòng đến 360 độ.</p><p style="width: 66.689%;">Người chơi ngồi bên trên sẽ được đưa lên cao đến hơn 10m, rồi rơi tự do xuống, lại bật lên nhiều vòng. Đỉnh điểm là khi cặp cá chép nhào lộn ngược trên không, khiến người chơi phải la hét vì phấn khích. Trò chơi nằm ở khu cảm giác mạnh tại cổng số 1 (đường Lạc Long Quân).</p>',
+                },
+            },
+            {
+                id: 'a78156e9-a03b-5b7c-a62b-8a4f768c79f7',
+                type: 'carousel-thumbnail',
+                data: {
+                    items: [
+                        {
+                            id: 'aeed4b0b-bdc0-5000-8d11-858b2f6aa562',
+                            imageSrc:
+                                '/o/explore%2Fca-chep-nhao-lon-01-min.jpg?alt=media&token=84b5cd65-e507-4e58-8d8d-f21dda1a7bd9',
+                            caption: 'Trò chơi cá chép nhào lộn tại CVVH Đầm Sen',
+                        },
+                        {
+                            id: 'f4127cfb-825f-5814-8377-67153abd5f42',
+                            imageSrc:
+                                '/o/explore%2Fca-chep-nhao-lon-02-min.jpg?alt=media&token=8b46a526-759e-45d8-a0b4-dc985f609021',
+                            caption: 'cá chép lộn ngược trên không',
+                        },
+                        {
+                            id: 'e5eef0bb-daf5-5cac-a50e-70507a8d9c85',
+                            imageSrc:
+                                '/o/explore%2Fca-chep-nhao-lon-03-min.jpg?alt=media&token=27c19b3c-b916-48fd-ab13-33340e1c09b6',
+                            caption: 'Cặp cá chép lộn ngược trên không',
+                        },
+                        {
+                            id: '92a54a53-fbaf-5e95-a65d-050620355aee',
+                            imageSrc:
+                                '/o/explore%2Fca-chep-nhao-lon-04-min.jpg?alt=media&token=974af5b4-1719-4bf1-9fff-7df6ac8e3708',
+                            caption: 'con tàu hình cá chép',
+                        },
+                        {
+                            id: '3670a4f8-c64d-52df-9a15-7bd5402b5457',
+                            imageSrc:
+                                '/o/explore%2Fca-chep-nhao-lon-07-min.jpg?alt=media&token=6df4172a-d555-4c52-94e9-a49489aadd4d',
+                            caption: 'Hai con tàu hình cá chép',
+                        },
+                    ],
+                    widthSlider: '59.216%',
+                },
+            },
+        ],
+    },
+    'khi-duoi-dai': {
+        prev: { label: 'Vượn đen má vàng', value: '#!' },
+        next: { label: 'Cá hỏa tiễn', value: '#!' },
+        blocks: [
+            {
+                id: '6d757c5d-1c99-593a-8c7d-7af39f6001dc',
+                type: 'thumbnail',
+                data: {
+                    src: 'https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/explore%2Fkhi-duoi-dai-thumbnail-min.png?alt=media&token=725ae2ea-e6cf-4995-8db4-eefe52fc18bf',
+                    alt: '',
+                },
+            },
+            {
+                id: '41e15d5d-ff96-5d8a-865e-f13563324661',
+                type: 'title',
+                data: {
+                    title: 'Khỉ đuôi dài',
+                    description: 'Khỉ đuôi dài tại vườn thú Đầm Sen khô',
+                    category: 'Vườn thú',
+                    date: '04/01/2021',
+                },
+            },
+            {
+                id: 'b02dc7fe-ea45-5ac5-b382-33d5e75c617b',
+                type: 'text-content',
+                data: {
+                    html: `
+                    <figure data-role="image-side" style="float: left">
+                        <img
+                            src="https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/explore%2Fkhi-duoi-dai-1-min.png?alt=media&token=abcf7966-680a-4c85-9a48-03ed37263abc" alt=""
+                            style="width: 474px; height: 386px; margin-right: 24px;"
+                        />
+                        <figcaption style="text-align: center;">Loài khỉ đuôi dài</figcaption>
+                    </figure>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h2>tìm hiểu về khỉ đuôi dài</h2>
+                    <p>
+                        Khỉ đuôi dài (Macaca fascicularis) có đuôi dài gần bằng hoặc hơn chiều dài cơ thể (khoảng 50 cm), và là loài có đuôi dài nhất. Lông chúng thường có màu xám đến nâu đỏ. Màu lông phía sau nhạt hơn, và lông trên đầu mọc hướng về sau. Thường có mào. Mặt có màu hồng.
+                    </p>
+                    
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <figure data-role="image-side" style="float: right">
+                        <img
+                            src="https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/explore%2Fkhi-duoi-dai-2-min.png?alt=media&token=b4949808-03df-443d-8f92-a2b3f97b5cfa" alt=""
+                            style="width: 474px; height: 386px; margin-left: 24px;"
+                        />
+                        <figcaption style="text-align: center;">Khỉ đuôi dài chúa chăm con</figcaption>
+                    </figure>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <p>
+                        Con đực lớn thường có hai chỏm lông trắng trên miệng như bộ ria. Con cái có lông quanh mồm thưa hơn. Con non sinh ra có màu đen. Thức ăn chủ yếu là quả, hạt, nõn cây, lá và động vật như côn trùng, ếch, nhái, cua…. Chúng hoạt động vào ban ngày và trên cây. Loài này bơi rất giỏi và thường nhảy xuống nước từ cành cây. <br/>
+                        Trong tự nhiên, Khỉ đuôi dài sống thành đàn từ 10-100 con. Trung bình 1 con đực sẽ có 2,5 con cái. Mỗi lần mang thai từ 160 - 170 ngày. Và chỉ sinh 1 con. Điểm đặc biệt khỉ chúa là dáng vẻ oai phong. Đồng thời, khỉ chúa chỉ “cưng nhất” một chú khỉ con nào đó. Và chú khỉ con ấy sẽ được xem là “thái tử” kế vị ngôi sau này.
+                    </p>
+                    
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <figure data-role="image-side" style="float: left">
+                        <img
+                            src="https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/explore%2Fkhi-duoi-dai-3-min.png?alt=media&token=48fb3fd2-a2de-442d-813a-2aa458f7ee16" alt=""
+                            style="width: 474px; height: 386px; margin-right: 24px;"
+                        />
+                    </figure>
+                    <br/>
+                    <br/>
+                    <h2>Cuộc chiến quyền lực</h2>
+                    <p>
+                        Nếu con khỉ đực nào trong bầy có ý định “léng phéng” với các tề thiếp của khỉ chúa, nó sẽ bị đánh đuổi ra khỏi đàn. Còn nếu muốn “đảo chính” thì không hề dễ bởi vóc dáng to lớn của khỉ chúa. Thường thì đám khỉ đực chỉ dám “giành ngôi” khi khỉ chúa già hoặc bệnh tật. Còn không thì chúng phải di tản sang địa bàn khác, hoặc lẩn tránh khi khỉ chúa xuất hiện.<br/>
+                        Những con khỉ bị phế truất như vậy sẽ lang thang tìm bầy khác gia nhập. Hoặc tìm những bầy yếu hơn để khiêu chiến. Chúng đánh nhau “một mất một còn”, và nếu nó thắng, bầy đó là của nó. Đó là bản chất của đời sống hoang dã.<br/>
+                        Loại khỉ đuôi dài này đang được chăm sóc tại khu vườn thú của Công viên Văn hóa Đầm Sen.
+                    </p>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>`,
+                },
+            },
+        ],
+    },
+    'quang-truong-vua-hung': {
+        prev: { label: 'Địa Điểm Sống Ảo', value: '#!' },
+        next: { label: 'Quảng Trường Âu Lạc', value: '#!' },
+        blocks: [
+            {
+                id: '408cdbe0-525b-5ad3-a055-88e4aa0e1aad',
+                type: 'thumbnail',
+                data: {
+                    src: 'https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/explore%2Fquang-truong-vua-hung-thumbnail-and-1-min.png?alt=media&token=f7b1bd78-90b2-499e-b75b-a163d53e8eb7',
+                    alt: '',
+                },
+            },
+            {
+                id: 'd3005471-9e07-55b8-a78b-412f70e77a8c',
+                type: 'title',
+                data: {
+                    title: 'Quảng trường vua Hùng',
+                    description: 'Quảng trường Vua Hùng trong ngày giỗ quốc tổ',
+                    category: 'Cảnh đẹp',
+                    date: '11/02/2020',
+                },
+            },
+            {
+                id: '66f1e8d7-3fb1-585a-b4c7-b32ff65b400c',
+                type: 'text-content',
+                data: {
+                    html: `
+                    <p>
+                        Hàng ngàn du khách đã đến dâng hương trước tượng Hùng Vương tại Quảng trường vua Hùng trong ngày 14/4/2019. Đây là quảng trường thứ 3 của CVVH Đầm Sen đưa vào hoạt động. (Trước đó, Đầm Sen đã có quảng trường Âu Lạc và quảng trường La Mã chuyên phục vụ sự kiện). Đền thờ này được xem như một cúng phẩm dâng lên trong ngày giổ Quốc tổ.
+                    </p>
+
+                    <h2>Ra mắt Quảng trường vua Hùng</h2>
+
+                    <p>
+                        Quảng trường này có tổng diện tích gần 1000m2. Bao gồm sân hành lễ được lát đá Granite với hoa văn mặt trời đặt ở chính giữa. Kế đến là thang rồng, tiết diện bề ngang 4,5 mét, đáp ứng đoàn khách 5 hàng. Trên cùng là khu vực dâng hương, được thiết kế 3 đền thờ. Chính giữa là chánh điện với tượng vua Hùng cao 1,7 mét, được làm bằng chất liệu composite phủ đồng, đặt trên bệ đá cao 0,8m.
+                    </p>
+
+                    <figure data-role="image-full">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/explore%2Fquang-truong-vua-hung-thumbnail-and-1-min.png?alt=media&token=f7b1bd78-90b2-499e-b75b-a163d53e8eb7" alt="" />
+
+                        <figcaption>Quảng trường vua Hùng trong ngày giỗ quốc tổ</figcaption>
+                    </figure>
+
+                    <p>
+                        Bức tượng vua Hùng tại Đầm Sen đã được Thạc sĩ - Điêu khắc gia Phạm Văn Út thực hiện. Tác giả đã xây dựng bố cục vua Hùng ngồi trên ngai, cách điệu từ hoa văn trống đồng. Mặt tượng nhìn thẳng thể hiện sự tôn nghiêm. Tay phải nắm chùm bông lúa, ý muốn đề cao một nền văn hóa lúa nước của dân tộc Việt, cho con cháu đời sau phải gìn giữ và tôn vinh. Tay trái để tự nhiên trong tư thế ngồi trao đổi với các Lạc tướng, Lạc hầu. Các hoa văn trang trí trên bộ trang phục, được lấy cảm hứng từ đường nét của nền văn hóa Đông Sơn. Đặc biệt là hoa văn trên trống đồng Ngọc Lũ.
+                    </p>
+
+                    <hr/>
+
+                    <h2>Ngày giỗ tổ đầu tiên trước linh tượng</h2>
+
+                    <p>
+                        8 giờ sáng ngày 14/4/2019, Phuthotourist cùng UBND Quận 11, Mặt trận tổ quốc VN Quận 11, Viện Lịch sử các dòng họ, đã tổ chức lễ dâng hương đầu tiên trước linh tượng vua Hùng. Và đây cũng là sự kiện ra mắt quảng trường Hùng Vương tại Đầm Sen. Hàng ngàn người dân và du khách đã đem lễ vật đến đây để dâng lên quốc tổ, cùng ôn lại lịch sử dân tộc ngàn năm.
+                    </p>
+                    `,
+                },
+            },
+            {
+                id: 'fbeecd80-015e-5f7b-9bc0-412391073271',
+                type: 'carousel-thumbnail',
+                data: {
+                    items: [
+                        {
+                            id: 'fbe47f4c-c4e1-54a7-8084-c6e72d6ebf8f',
+                            imageSrc:
+                                '/o/explore%2Fquang-truong-vua-hung-slide-1.webp?alt=media&token=5d42d475-ab37-4abd-8c32-50c061b33adf',
+                            caption: 'Cảnh làm lễ giỗ quốc tổ tại quảng trường vua Hùng 2019',
+                        },
+                        {
+                            id: '8917c96c-e9c8-50ed-955f-303abb836107',
+                            imageSrc:
+                                '/o/explore%2Fquang-truong-vua-hung-slide-2.webp?alt=media&token=5b5213cd-f984-4e6f-b8b8-868b2a781c13',
+                            caption: 'Cảnh làm lễ giỗ quốc tổ tại quảng trường vua Hùng 2019',
+                        },
+                        {
+                            id: '0444803d-748d-5f5a-ad63-d342431128bf',
+                            imageSrc:
+                                '/o/explore%2Fquang-truong-vua-hung-slide-3.webp?alt=media&token=25c500f5-86aa-46df-bbb2-63958a0c9f64',
+                            caption: 'Cảnh làm lễ giỗ quốc tổ tại quảng trường vua Hùng 2019',
+                        },
+                        {
+                            id: '857ca6e6-96d7-50b9-ae0a-e76db263ba36',
+                            imageSrc:
+                                '/o/explore%2Fquang-truong-vua-hung-slide-4.webp?alt=media&token=4496c90c-4643-44a3-90e8-4213de19e105',
+                            caption: 'Cảnh làm lễ giỗ quốc tổ tại quảng trường vua Hùng 2019',
+                        },
+                        {
+                            id: 'd3687eb3-d97d-5ee5-8a88-54bc55f5abca',
+                            imageSrc:
+                                '/o/explore%2Fquang-truong-vua-hung-slide-5.webp?alt=media&token=9062a83e-cf94-4fdf-a779-089dfa8d8acc',
+                            caption: 'Cảnh làm lễ giỗ quốc tổ tại quảng trường vua Hùng 2019',
+                        },
+                    ],
+                    widthSlider: '59.216%',
+                },
+            },
+            {
+                id: '578afb34-2482-504a-99b8-d4d70c07d869',
+                type: 'text-content',
+                data: {
+                    html: `
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h2>Những khó khăn khi thực hiện</h2>
+
+                    <p>
+                        Mặc dù đã lên phương án xây dựng một Quảng trường vua Hùng từ nhiều năm. Nhưng khó khăn nhất là vấn đề chân dung của vua Hùng. Trong nhận thức của người Việt, một vị vua cha phải mang những nét anh minh và đức độ; nghiêm khắc nhưng bao dung; hiền hậu nhưng quyết đoán. Để lột tả được những nét đặc trưng đó, quả là điều không dễ. Điều này đã được bàn đi bàn lại, từ đường nét gương mặt; trang phục; vóc dáng; tư thế; cho đến cả chất liệu sao cho dễ di chuyển.
+                    </p>
+
+                    <figure data-role="image-full">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/explore%2Fquang-truong-vua-hung-5-min.png?alt=media&token=b102a3e0-95ca-4774-94b7-14af3fbbe58b" alt="" />
+
+                        <figcaption>
+                            Sân hành lễ với sức chứa hàng ngàn người trong ngày đầu tiên ra mắt quảng trường vua Hùng tại Đầm Sen
+                        </figcaption>
+                    </figure>
+                    `,
+                },
+            },
+        ],
+    },
+};
+
+export const blogEventList: Blog[] = [
+    {
+        id: 'ra-mat-ve-djam-sen-special-choi-ca-2-cong-vien-242ccc9a-71a2-54d4-975d-2f4d2e05d4be',
+        imageSrc: '/o/event%2Fevent-list-1-min.png?alt=media&token=fb884d73-f921-47cc-b78f-d52d3ac1375d',
+        title: 'Ra mắt vé Đầm Sen Special chơi cả 2 công viên',
+        description: 'Loại vé này bao gồm cả 2 công viên với chủ đề “quẩy hè đi, chờ chi!”',
+        category: 'Sự kiện',
+        date: '06/11/2020',
+    },
+    {
+        id: 'sap-ra-mat-djam-sen-lake-show-cuoi-nam-2020-19a67611-d0b9-5b42-b8c4-86ac29916d5b',
+        imageSrc: '/o/event%2Fevent-list-2-min.png?alt=media&token=253405fb-c4bd-4c2b-9c1f-a4328312000e',
+        title: 'Sắp ra mắt Đầm Sen Lake Show cuối năm 2020',
+        description:
+            'Chỉ còn hơn 1 tháng nữa, Công viên văn hóa Đầm Sen sắp ra mắt dự án Lake Show (biểu diễn nhạc nước trên hồ) trên mặt hồ lớn nhất TP.HCM',
+        category: 'Sự kiện',
+        date: '06/11/2020',
+    },
+    {
+        id: 'djon-nam-moi-2020-nhieu-san-choi-mien-phi-e05bc8ca-b7bc-5724-8707-ddc08ad39d47',
+        imageSrc: '/o/event%2Fevent-list-3-min.png?alt=media&token=d24b3eb3-7204-4c18-afcb-1a4dfdec3efb',
+        title: 'Đón năm mới 2020: nhiều sân chơi miễn phí',
+        description:
+            'Ngoài không gian “sống ảo” tại Đầm Sen, du khách còn được tham gia các sân chơi miễn phí của giáng sinh và đón năm mới 2020',
+        category: 'Sự kiện',
+        date: '06/11/2020',
+    },
+    {
+        id: 'he-2019-va-nhung-chuong-trinh-djac-biet-cho-thieu-nhi-c64b9815-5557-5f0e-b09a-41b652f3187f',
+        imageSrc: '/o/event%2Fevent-list-4-min.png?alt=media&token=935eb330-6827-4d2f-8c44-61a9a69537c5',
+        title: 'Hè 2019 và những chương trình đặc biệt cho thiếu nhi',
+        description:
+            'Với chủ đề “Đầm Sen Amazing Summer 2019”, các chương trình vui hè Đầm Sen bắt đầu từ 25/5 cho đến hết 11/8/2019',
+        category: 'Sự kiện',
+        date: '06/11/2020',
+    },
+    {
+        id: 'ra-mat-ve-djam-sen-special-choi-ca-2-cong-vien-db1ce266-34e4-5abb-98a3-294c442818d7',
+        imageSrc: '/o/event%2Fevent-list-1-min.png?alt=media&token=fb884d73-f921-47cc-b78f-d52d3ac1375d',
+        title: 'Ra mắt vé Đầm Sen Special chơi cả 2 công viên',
+        description:
+            'Loại vé này bao gồm cả 2 công viên để chào đón tháng hè đặc biệt của năm nay với chủ đề “quẩy hè đi, chờ chi!”',
+        category: 'Sự kiện',
+        date: '06/11/2020',
+    },
+    {
+        id: 'sap-ra-mat-djam-sen-lake-show-cuoi-nam-2020-1885e0ce-1b70-5b84-901c-566b011fba67',
+        imageSrc: '/o/event%2Fevent-list-2-min.png?alt=media&token=253405fb-c4bd-4c2b-9c1f-a4328312000e',
+        title: 'Sắp ra mắt Đầm Sen Lake Show cuối năm 2020',
+        description:
+            'Chỉ còn hơn 1 tháng nữa, Công viên văn hóa Đầm Sen sắp ra mắt dự án Lake Show (biểu diễn nhạc nước trên hồ) trên mặt hồ lớn nhất TP.HCM',
+        category: 'Sự kiện',
+        date: '06/11/2020',
+    },
+    {
+        id: 'djon-nam-moi-2020-nhieu-san-choi-mien-phi-f539130b-99bc-5cd3-b335-202ef99d4e6a',
+        imageSrc: '/o/event%2Fevent-list-3-min.png?alt=media&token=d24b3eb3-7204-4c18-afcb-1a4dfdec3efb',
+        title: 'Đón năm mới 2020: nhiều sân chơi miễn phí',
+        description:
+            'Ngoài không gian “sống ảo” tại Đầm Sen, du khách còn được tham gia các sân chơi miễn phí của giáng sinh và đón năm mới 2020',
+        category: 'Sự kiện',
+        date: '06/11/2020',
+    },
+    {
+        id: 'he-2019-va-nhung-chuong-trinh-djac-biet-cho-thieu-nhi-73d00327-562c-5f4b-88a4-64ea69c425a9',
+        imageSrc: '/o/event%2Fevent-list-4-min.png?alt=media&token=935eb330-6827-4d2f-8c44-61a9a69537c5',
+        title: 'Hè 2019 và những chương trình đặc biệt cho thiếu nhi',
+        description:
+            'Với chủ đề “Đầm Sen Amazing Summer 2019”, các chương trình vui hè Đầm Sen bắt đầu từ 25/5 cho đến hết 11/8/2019',
+        category: 'Sự kiện',
+        date: '06/11/2020',
+    },
+];
+
+export const mightYouLikeList: Blog[] = [
+    {
+        id: 'roller-coaster-dd8981c4-e793-5818-ba45-026c0b7d3cfd',
+        imageSrc: '/o/event%2Fmade-you-like-1-min.png?alt=media&token=2e7b1e4c-b5cf-46d1-8db3-1c39057d7fad',
+        title: 'Roller Coaster',
+        description: '',
+        category: 'Cảm giác mạnh',
+        date: '10/02/2020',
+    },
+    {
+        id: 'vong-xoay-khong-gian-181f5773-6a58-5919-b24b-27b91b136c7d',
+        imageSrc: '/o/event%2Fmade-you-like-2-min.png?alt=media&token=0176697b-c422-45f0-9458-0f2a0f79ccf6',
+        title: 'Vòng xoay không gian',
+        description: '',
+        category: 'Cảm giác mạnh',
+        date: '10/02/2020',
+    },
+    {
+        id: 'vong-quay-than-toc-39599b24-633a-5a0a-b4c7-ae8d5322b366',
+        imageSrc: '/o/event%2Fmade-you-like-3-min.png?alt=media&token=cb0b5dec-9f34-4423-a526-384f9972bed2',
+        title: 'Vòng quay thần tốc',
+        description: '',
+        category: 'Cảm giác mạnh',
+        date: '10/02/2020',
+    },
+    {
+        id: 'ca-chep-nhao-lon-69958d5c-5472-5aac-9439-b290033f18e8',
+        imageSrc: '/o/event%2Fmade-you-like-4-min.png?alt=media&token=212f2572-fab3-4811-a8b3-25d502e13c4b',
+        title: 'Cá chép nhào lộn',
+        description: '',
+        category: 'Cảm giác mạnh',
+        date: '10/02/2020',
+    },
+    {
+        id: 'roller-coaster-b5000aaa-9f22-554a-8177-7676b09fa4dd',
+        imageSrc: '/o/event%2Fmade-you-like-1-min.png?alt=media&token=2e7b1e4c-b5cf-46d1-8db3-1c39057d7fad',
+        title: 'Roller Coaster',
+        description: '',
+        category: 'Cảm giác mạnh',
+        date: '10/02/2020',
+    },
+    {
+        id: 'vong-xoay-khong-gian-1359680e-43d8-542e-96ab-0a562ad0068f',
+        imageSrc: '/o/event%2Fmade-you-like-2-min.png?alt=media&token=0176697b-c422-45f0-9458-0f2a0f79ccf6',
+        title: 'Vòng xoay không gian',
+        description: '',
+        category: 'Cảm giác mạnh',
+        date: '10/02/2020',
+    },
+    {
+        id: 'vong-quay-than-toc-1d447d32-d36a-5bf0-8ae2-5ac71ffd7c2d',
+        imageSrc: '/o/event%2Fmade-you-like-3-min.png?alt=media&token=cb0b5dec-9f34-4423-a526-384f9972bed2',
+        title: 'Vòng quay thần tốc',
+        description: '',
+        category: 'Cảm giác mạnh',
+        date: '10/02/2020',
+    },
+    {
+        id: 'ca-chep-nhao-lon-02e6e3e0-bf20-5104-bc21-d8f1e8db5911',
+        imageSrc: '/o/event%2Fmade-you-like-4-min.png?alt=media&token=212f2572-fab3-4811-a8b3-25d502e13c4b',
+        title: 'Cá chép nhào lộn',
+        description: '',
+        category: 'Cảm giác mạnh',
+        date: '10/02/2020',
+    },
+];
