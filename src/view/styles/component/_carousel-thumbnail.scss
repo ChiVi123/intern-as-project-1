@@ -1,0 +1,238 @@
+@use '/src/view/styles/abstracts';
+
+.carousel-thumbnail {
+    margin: 0 auto;
+    color: var(--gray-500);
+    line-height: 1.5;
+
+    @include abstracts.breakpoint(md) {
+        width: 100% !important;
+    }
+
+    & + & {
+        margin-top: 32px;
+
+        @include abstracts.breakpoint(md) {
+            margin-top: 0;
+        }
+    }
+
+    & > .slick-slider {
+        position: relative;
+        touch-action: pan-y;
+        -webkit-tap-highlight-color: transparent;
+
+        .slick-list {
+            position: relative;
+            transform: translate3d(0, 0, 0);
+            touch-action: pan-y;
+            overflow: hidden;
+        }
+
+        .slick-track {
+            position: relative;
+            top: 0;
+            inset-inline-start: 0;
+            touch-action: pan-y;
+        }
+
+        .slick-slide {
+            float: left;
+            height: 100%;
+            min-height: 1px;
+        }
+    }
+
+    &__slider.slick-slider {
+        position: relative;
+
+        .slick-slide {
+            figure {
+                img {
+                    width: 100%;
+                    aspect-ratio: 200 / 133;
+                    object-fit: contain;
+                }
+
+                figcaption {
+                    margin-top: 12px;
+                    text-align: center;
+
+                    @include abstracts.breakpoint(sm) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .slick-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translate(var(--carousel-thumbnail-translate-x), -50%);
+            background-color: transparent;
+            outline: none;
+
+            color: var(--green-500);
+            font-size: 10rem;
+
+            cursor: pointer;
+            z-index: 1;
+
+            @include abstracts.breakpoint(lg) {
+                font-size: 4.8rem;
+            }
+
+            @include abstracts.breakpoint(md) {
+                transform: translateY(-50%);
+                background-color: var(--white);
+                border-radius: 100%;
+                font-size: 3.2rem;
+                opacity: 0.7;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            }
+
+            @include abstracts.breakpoint(sm) {
+                font-size: 2.8rem;
+            }
+
+            &.slick-prev {
+                --carousel-thumbnail-translate-x: -100%;
+                left: 0;
+
+                @include abstracts.breakpoint(md) {
+                    left: 8px;
+                }
+            }
+
+            &.slick-next {
+                --carousel-thumbnail-translate-x: 100%;
+                right: 0;
+
+                @include abstracts.breakpoint(md) {
+                    right: 8px;
+                }
+
+                svg {
+                    transform: rotateZ(180deg);
+                }
+            }
+        }
+    }
+
+    &__dots {
+        --carousel-thumbnail-dot-size: 6px;
+        --carousel-thumbnail-dot-gap: 4px;
+
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: var(--carousel-thumbnail-dot-gap);
+        width: 100%;
+        margin-top: 6px;
+
+        & > li {
+            width: var(--carousel-thumbnail-dot-size);
+            height: var(--carousel-thumbnail-dot-size);
+            background-color: var(--gray-200);
+            border-radius: 100%;
+            transition: background-color 300ms ease;
+
+            button {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                border: 0;
+                border-radius: var(--carousel-thumbnail-dot-size);
+                outline: none;
+                color: transparent;
+                font-size: 0;
+                cursor: pointer;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    inset: calc(var(--carousel-thumbnail-dot-gap) * -1);
+                }
+            }
+        }
+
+        & > li.slick-active {
+            background-color: var(--green-500);
+        }
+    }
+
+    &__paging.slick-slider {
+        --carousel-thumbnail-gutter: 42px;
+        --carousel-thumbnail-space: calc(var(--carousel-thumbnail-gutter) / 2);
+
+        @include abstracts.breakpoint(xl) {
+            --carousel-thumbnail-gutter: 16px;
+        }
+
+        @include abstracts.breakpoint(lg) {
+            --carousel-thumbnail-gutter: 32px;
+        }
+
+        .slick-list {
+            margin: 0 calc(var(--carousel-thumbnail-space) * -1);
+        }
+
+        .slick-track {
+            // https://github.com/kenwheeler/slick/issues/1302#issuecomment-2312395894
+            // fix center when slide to show equal slides count
+            left: calc(100% / 5);
+
+            @include abstracts.breakpoint(sm) {
+                left: unset;
+            }
+        }
+
+        .slick-slide {
+            margin: 10px 0;
+            padding-right: var(--carousel-thumbnail-space);
+            padding-left: var(--carousel-thumbnail-space);
+
+            &.slick-active.slick-current {
+                & > * {
+                    position: relative;
+                }
+
+                & > *::after {
+                    content: '';
+                    position: absolute;
+                    inset: -8px;
+                    display: block;
+                    border: 4px solid var(--pink-500);
+
+                    @include abstracts.breakpoint(sm) {
+                        content: unset;
+                    }
+                }
+            }
+
+            img {
+                width: 100%;
+                aspect-ratio: 119/78;
+                object-fit: contain;
+
+                @include abstracts.breakpoint(sm) {
+                    display: none;
+                }
+            }
+
+            img + div {
+                display: none;
+
+                @include abstracts.breakpoint(sm) {
+                    display: block;
+                    width: 327px;
+                    margin: 0 auto;
+                    font-size: 1.2rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

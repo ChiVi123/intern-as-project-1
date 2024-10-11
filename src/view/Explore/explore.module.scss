@@ -1,0 +1,186 @@
+@use '/src/view/styles/abstracts';
+
+.wrap {
+    position: relative;
+}
+
+.note {
+    --explore-note-theme-color: #527757;
+
+    position: absolute;
+    top: 14.05%;
+    left: 6.5%;
+    background-color: #fbfbe3;
+    border: 6px solid var(--explore-note-theme-color);
+    border-radius: 36px;
+    overflow: hidden;
+
+    @include abstracts.breakpoint(xl) {
+        border-radius: 24px;
+    }
+
+    @include abstracts.breakpoint(md) {
+        display: none;
+    }
+
+    &-heading {
+        &-wrap {
+            padding: 10px 0;
+            background-color: var(--explore-note-theme-color);
+
+            @include abstracts.breakpoint(xxl) {
+                padding: 6px 0;
+            }
+
+            @include abstracts.breakpoint(xl) {
+                padding: 4px 0;
+            }
+        }
+
+        &-content {
+            color: var(--white);
+            // font-family: SVN-Gotham;
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.5;
+            text-align: center;
+
+            @include abstracts.breakpoint(xxl) {
+                font-size: 2.6rem;
+            }
+
+            @include abstracts.breakpoint(xl) {
+                font-size: 1.8rem;
+            }
+
+            @include abstracts.breakpoint(lg) {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 56px;
+        padding: 18px 66px 28px;
+
+        @include abstracts.breakpoint(xxl) {
+            column-gap: 28px;
+            padding: 12px 20px;
+        }
+
+        @include abstracts.breakpoint(xl) {
+            column-gap: 24px;
+            padding: 12px 16px;
+        }
+    }
+
+    &-col {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+        column-gap: 9px;
+
+        @include abstracts.breakpoint(md) {
+            column-gap: 4px;
+        }
+    }
+
+    &-image {
+        width: 56px;
+        height: 56px;
+        background-color: var(--explore-note-theme-color);
+
+        @include abstracts.breakpoint(xxl) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &-item:last-child &-image {
+        height: 40px;
+    }
+
+    &-content {
+        color: #456a7a;
+        // font-family: SVN-Amsi Narw;
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 1.24;
+    }
+}
+
+.note-btn {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: none;
+    height: auto;
+    padding: 0;
+    border: none;
+    border-radius: 100%;
+    box-shadow: 0px 2px 15px 0px #00000033;
+    line-height: 1;
+    z-index: 1;
+
+    @include abstracts.breakpoint(md) {
+        display: flex;
+    }
+
+    &-icon {
+        color: var(--active-menu-color);
+        font-size: 3rem;
+    }
+
+    &-col {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+
+.transform {
+    &-wrapper {
+        max-width: 100%;
+        max-height: calc(100vh - 48px);
+
+        @include abstracts.breakpoint(lg) {
+            max-height: calc(100vh - 48px - 50px);
+        }
+
+        @include abstracts.breakpoint(md) {
+            max-height: calc(100vh - 50px);
+        }
+    }
+
+    &-content {
+        position: relative;
+    }
+}
+
+.image {
+    &-title {
+        position: absolute;
+        top: 1.98%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 46.44%;
+    }
+
+    &-content {
+        max-width: calc(100vw - 257px - 48px);
+
+        @include abstracts.breakpoint(lg) {
+            max-width: 100%;
+        }
+
+        @include abstracts.breakpoint(md) {
+            min-height: calc(100vh - 50px);
+        }
+    }
+}

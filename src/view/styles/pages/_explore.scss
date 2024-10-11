@@ -1,0 +1,32 @@
+.explore-page-custom-note-btn.ant-popover {
+    --explore-note-btn-theme-color: #527757;
+
+    .ant-popover {
+        &-inner[role='tooltip'] {
+            width: 300px;
+            padding: 0;
+        }
+
+        &-title {
+            padding: 5px 0px;
+            margin: 0;
+            background-color: var(--explore-note-btn-theme-color);
+            border-radius: 14px 14px 0 0;
+
+            color: var(--white);
+            // font-family: SVN-Gotham;
+            font-size: 1.6rem;
+            font-weight: 900;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        &-inner-content {
+            padding: 12px 10px;
+            border-width: 0 2px 2px;
+            border-style: solid;
+            border-color: var(--explore-note-btn-theme-color);
+            border-radius: 0 0 14px 14px;
+        }
+    }
+}
