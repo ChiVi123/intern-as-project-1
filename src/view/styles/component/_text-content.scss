@@ -1,3 +1,5 @@
+@use '/src/view/styles/abstracts';
+
 .text-content {
     p,
     span,
@@ -52,11 +54,50 @@
     strong {
     }
 
+    hr {
+        margin: 80px 0;
+        border: 1px solid #99c6b1;
+    }
+
     figure {
-        img {
+        &[data-role='image-side'] {
+            @include abstracts.breakpoint(md) {
+                position: relative;
+                float: unset !important;
+                width: 100%;
+                background-color: var(--black);
+
+                figcaption {
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    left: 0;
+                }
+            }
+
+            img {
+                @include abstracts.breakpoint(md) {
+                    display: block;
+                    width: 100% !important;
+                    margin: 0 auto !important;
+                }
+            }
+        }
+
+        &[data-role='image-full'] {
+            margin-bottom: 40px;
+
+            img {
+                width: 100%;
+            }
         }
 
         figcaption {
+            margin-top: 12px;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: center;
         }
     }
 }
