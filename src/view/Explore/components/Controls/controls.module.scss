@@ -1,0 +1,41 @@
+@use '/src/view/styles/abstracts';
+
+.wrap {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px 0px #00000040;
+    z-index: 1;
+
+    @include abstracts.breakpoint(md) {
+        display: none;
+    }
+}
+
+.btn {
+    height: auto;
+    padding: 0;
+    border: none;
+    outline: none;
+    color: var(--pink-500);
+    font-size: 2.4rem;
+    line-height: 1;
+
+    &:not(:disabled):hover {
+        background-color: transparent;
+        color: var(--pink-500);
+    }
+}
+
+.separate {
+    width: 1px;
+    height: 20px;
+    background-color: var(--gray-200);
+}

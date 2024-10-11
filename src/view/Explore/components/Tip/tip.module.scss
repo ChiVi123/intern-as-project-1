@@ -1,0 +1,42 @@
+@use '/src/view/styles/abstracts';
+
+.tip {
+    --explore-tip-size: 44px;
+
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: var(--explore-tip-size);
+    height: var(--explore-tip-size);
+    padding: 0;
+    background-color: var(--white);
+    border: 2px solid var(--pink-500);
+    border-radius: 100%;
+
+    color: var(--pink-500);
+    font-size: 2.3rem;
+    font-weight: 600;
+    line-height: 1;
+
+    z-index: 1;
+
+    @include abstracts.breakpoint(xxl) {
+        --explore-tip-size: 28px;
+        font-size: 1.4rem;
+    }
+
+    @include abstracts.breakpoint(md) {
+        --explore-tip-size: 28px;
+        font-size: 1.4rem;
+    }
+
+    @include abstracts.breakpoint(sm) {
+        --explore-tip-size: 14px;
+        font-size: 0.6rem;
+    }
+
+    &:not(:disabled):hover {
+        border-color: var(--pink-500) !important;
+        color: var(--pink-500) !important;
+    }
+}
