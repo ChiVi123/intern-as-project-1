@@ -2,17 +2,35 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { ArticleNavigate, ArticleThumbnail, ArticleTitle, CarouselMightYouLike, CarouselThumbnail } from '~components';
+import { getArticleBySlug, IArticleEntity } from '~modules/article';
 
-import { articles, mightYouLikeList } from '../data';
+import { mightYouLikeList } from '../data';
 
 function Blog() {
-    const { id } = useParams();
-    const [article, setArticle] = useState<ArticleType>();
+    const { slug } = useParams();
+    const [article, setArticle] = useState<IArticleEntity>();
 
     useEffect(() => {
-        const article = articles[id || ''];
-        setArticle(article);
-    }, [id]);
+        (async function (value: string) {
+            try {
+                const querySnapshot = await getArticleBySlug(value);
+
+                if (!querySnapshot || querySnapshot.empty) {
+                    console.log('can not find article with key:', value);
+                    return;
+                }
+                const snapshot = querySnapshot.docs[0];
+                if (!snapshot.exists()) {
+                    console.log('can not find article with key:', value);
+                    return;
+                }
+
+                setArticle({ id: snapshot.id, ...snapshot.data() });
+            } catch (error) {
+                console.log(error);
+            }
+        })(slug || '');
+    }, [slug]);
 
     return (
         <div className='section'>

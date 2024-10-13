@@ -14,8 +14,6 @@ interface IArrowProps {
 
 interface ISlideProps {
     item: ItemThumbnailType;
-    baseURL: string;
-    pathname: string;
     style?: CSSProperties;
 }
 interface IProps {
@@ -33,9 +31,9 @@ const Arrow = ({ currentSlide, direction, slideCount, ...carouselProps }: IArrow
     </>
 );
 
-const ThumbnailPaging = ({ item, baseURL, pathname, style }: ISlideProps) => (
+const ThumbnailPaging = ({ item, style }: ISlideProps) => (
     <div style={{ ...style, display: 'flex' }}>
-        <img src={baseURL + pathname + item.imageSrc} alt={item.caption} />
+        <img src={item.imageSrc} alt={item.caption} />
         <div>{item.caption}</div>
     </div>
 );
@@ -46,8 +44,6 @@ function CarouselThumbnail({ widthSlider, marginSlider, items }: IProps) {
     const sliderRef1 = useRef<Slider | null>();
     const sliderRef2 = useRef<Slider | null>();
 
-    const baseURL: string = 'https://firebasestorage.googleapis.com';
-    const pathname: string = '/v0/b/intern-as-project-1.appspot.com';
     const settings: Settings = { centerMode: true, centerPadding: '0' };
 
     useEffect(() => {
@@ -71,7 +67,7 @@ function CarouselThumbnail({ widthSlider, marginSlider, items }: IProps) {
                 >
                     {items.map((item) => (
                         <figure key={item.id}>
-                            <img src={baseURL + pathname + item.imageSrc} alt={item.caption} />
+                            <img src={item.imageSrc} alt={item.caption} />
                             <figcaption>{item.caption}</figcaption>
                         </figure>
                     ))}
@@ -89,7 +85,7 @@ function CarouselThumbnail({ widthSlider, marginSlider, items }: IProps) {
                     className='carousel-thumbnail__paging'
                 >
                     {items.map((item) => (
-                        <ThumbnailPaging key={item.id} item={item} baseURL={baseURL} pathname={pathname} />
+                        <ThumbnailPaging key={item.id} item={item} />
                     ))}
                 </Carousel>
             </div>

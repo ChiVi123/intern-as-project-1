@@ -501,6 +501,7 @@ export const tips: TipType[] = [
 
 export const articles: Record<string, ArticleType> = {
     'ca-chep-nhao-lon': {
+        slug: 'ca-chep-nhao-lon',
         prev: { label: 'Phượng hoàng bay', value: '#!' },
         next: { label: 'Tàu vượt thác', value: '#!' },
         blocks: [
@@ -571,6 +572,7 @@ export const articles: Record<string, ArticleType> = {
         ],
     },
     'khi-duoi-dai': {
+        slug: 'khi-duoi-dai',
         prev: { label: 'Vượn đen má vàng', value: '#!' },
         next: { label: 'Cá hỏa tiễn', value: '#!' },
         blocks: [
@@ -680,6 +682,7 @@ export const articles: Record<string, ArticleType> = {
         ],
     },
     'quang-truong-vua-hung': {
+        slug: 'quang-truong-vua-hung',
         prev: { label: 'Địa Điểm Sống Ảo', value: '#!' },
         next: { label: 'Quảng Trường Âu Lạc', value: '#!' },
         blocks: [

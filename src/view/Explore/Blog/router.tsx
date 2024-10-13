@@ -2,6 +2,6 @@ import { lazy } from 'react';
 import { RouteObject } from 'react-router-dom';
 
 export const exploreBlogRouter: RouteObject = {
-    path: '/explore/:id',
+    path: '/explore/:slug',
     Component: lazy(() => import('./index')),
 };

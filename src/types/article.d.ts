@@ -50,6 +50,7 @@ interface Blog {
 
 type ArticleBlockType = ITitle | IThumbnail | ITextContent | ICarouselThumbnail;
 type ArticleType = {
+    slug: string;
     prev: { label: string; value: string };
     next: { label: string; value: string };
     blocks: ArticleBlockType[];
