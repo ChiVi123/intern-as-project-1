@@ -1,6 +1,9 @@
 {
     "compilerOptions": {
         "paths": {
+            "~config": ["./src/config"],
+            "~config/*": ["./src/config/*"],
+
             "~components": ["./src/shared/components"],
             "~components/*": ["./src/shared/components/*"],
 
