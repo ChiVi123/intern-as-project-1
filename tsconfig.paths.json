@@ -4,6 +4,9 @@
             "~config": ["./src/config"],
             "~config/*": ["./src/config/*"],
 
+            "~core": ["./src/core"],
+            "~core/*": ["./src/core/*"],
+
             "~components": ["./src/shared/components"],
             "~components/*": ["./src/shared/components/*"],
 

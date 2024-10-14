@@ -1,18 +1,22 @@
 import { Button, Flex, Popover } from 'antd';
 import classNames from 'classnames/bind';
 import { Fragment } from 'react';
+import { useSelector } from 'react-redux';
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 
 import { WarningCircleIcon } from '~icons';
+import { selectLocationState } from '~modules/location/slice';
 
 import { Controls, Tip } from './components';
-import { notes, tips } from './data';
+import { notes } from './data';
 
 import styles from './explore.module.scss';
 
 const cx = classNames.bind(styles);
 
 function ExplorePage() {
+    const { data: locations } = useSelector(selectLocationState);
+
     return (
         <div className={cx('wrap')}>
             <TransformWrapper wheel={{ wheelDisabled: true }} panning={{ wheelPanning: true }}>
@@ -68,8 +72,8 @@ function ExplorePage() {
                                 </div>
                             </div>
 
-                            {tips.map((tip, index) => (
-                                <Tip key={tip.id} index={index} {...tip} />
+                            {locations.map((tip) => (
+                                <Tip key={tip.id} {...tip} />
                             ))}
 
                             <img

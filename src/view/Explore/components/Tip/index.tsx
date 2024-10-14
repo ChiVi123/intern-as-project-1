@@ -3,17 +3,15 @@ import classNames from 'classnames/bind';
 import { useState } from 'react';
 
 import { XmarkIcon } from '~icons';
+import { ILocationEntity } from '~modules/location';
 
-import { TipType } from '../../data';
 import styles from './tip.module.scss';
 
-interface ITipProps extends TipType {
-    index: number;
-}
+interface ITipProps extends ILocationEntity {}
 
 const cx = classNames.bind(styles);
 
-function Tip({ index, title, content, position }: ITipProps) {
+function Tip({ mark, title, content, position }: ITipProps) {
     const [open, setOpen] = useState<boolean>(false);
     const handleHide = () => setOpen(false);
     const handleOpenChange = (open: boolean) => setOpen(open);
@@ -28,7 +26,7 @@ function Tip({ index, title, content, position }: ITipProps) {
             onOpenChange={handleOpenChange}
         >
             <Button className={cx('tip')} style={{ ...position }}>
-                {open ? <XmarkIcon /> : String(index + 1).padStart(2, '0')}
+                {open ? <XmarkIcon /> : mark}
             </Button>
         </Popover>
     );
