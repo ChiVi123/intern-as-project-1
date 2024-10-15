@@ -1,1 +1,1 @@
-export { default as TabContent } from './TabContent';
+export { default as TabMenuModal } from './TabMenuModal';
