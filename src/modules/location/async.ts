@@ -1,11 +1,19 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getDocs } from 'firebase/firestore';
 import { ILocationEntity } from './entity';
-import { locationCollection } from './repository';
+import { getAllLocation } from './repository';
 
-export const fetchAllLocation = createAsyncThunk('location/fetchAllLocation', async () => {
-    return (await getDocs(locationCollection)).docs.map((doc) => {
-        const { category, ...data } = doc.data();
-        return { ...data, id: doc.id } as ILocationEntity;
+export const fetchAllLocation = createAsyncThunk('location/fetchAllLocation', async (): Promise<ILocationEntity[]> => {
+    const snapshot = await getAllLocation();
+
+    if (snapshot.empty) {
+        return [];
+    }
+
+    return snapshot.docs.map((doc) => {
+        const location = doc.data();
+        location.id = doc.id;
+        location.categoryId = location.category!.id;
+        delete location.category;
+        return location;
     });
 });

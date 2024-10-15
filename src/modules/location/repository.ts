@@ -1,12 +1,14 @@
-import { collection, CollectionReference, getDocs, orderBy, OrderByDirection, query, where } from 'firebase/firestore';
+import { collection, CollectionReference, DocumentReference, getDocs, query, where } from 'firebase/firestore';
 import firestore from '~config/firestore';
+import { ICategoryEntity } from '~modules/category';
+import { ILocationEntity } from './entity';
 
-export const locationCollection = collection(firestore, 'location') as CollectionReference<ILocationModal>;
+export const locationCollection = collection(firestore, 'location') as CollectionReference<ILocationEntity>;
 
 export const getAllLocation = async () => {
-    return (await getDocs(locationCollection)).docs;
+    return getDocs(locationCollection);
 };
-export const getAllLocationSortByMark = async (directionStr: OrderByDirection = 'asc') => {
-    const q = query(locationCollection, where('mark', 'in', ['60', '61', '63']), orderBy('mark', directionStr));
-    return (await getDocs(q)).docs;
+export const getAllLocationByCategory = async (category: DocumentReference<ICategoryEntity>) => {
+    const q = query(locationCollection, where('category', '==', category));
+    return getDocs(q);
 };

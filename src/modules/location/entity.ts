@@ -8,5 +8,6 @@ export interface ILocationEntity {
     content: string;
     isList?: boolean;
     category?: DocumentReference<ICategoryEntity>;
+    categoryId?: string;
     position: { top: string; left: string };
 }
