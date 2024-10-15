@@ -49,25 +49,3 @@ interface Blog {
 }
 
 type ArticleBlockType = ITitle | IThumbnail | ITextContent | ICarouselThumbnail;
-type ArticleType = {
-    slug: string;
-    prev: { label: string; value: string };
-    next: { label: string; value: string };
-    blocks: ArticleBlockType[];
-};
-
-interface IArticleModal {
-    id?: string;
-    slug: string;
-    title: string;
-    thumbnail: {
-        src: string;
-        alt?: string;
-        caption?: string;
-    };
-    blocks: ArticleBlockType[];
-    category?: { name: string; documentPath: string };
-    /** location: document path */
-    location?: string;
-    createAt: Date;
-}
