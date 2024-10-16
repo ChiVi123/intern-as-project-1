@@ -1,6 +1,6 @@
 @use '/src/view/styles/abstracts';
 
-.tip {
+.button {
     --explore-tip-size: 44px;
 
     position: absolute;
@@ -39,4 +39,46 @@
         border-color: var(--pink-500) !important;
         color: var(--pink-500) !important;
     }
+
+    &-link {
+        display: flex;
+        background-color: var(--green-500);
+        border-radius: 100%;
+        color: var(--white);
+        font-size: 3.2rem;
+
+        &:hover {
+            color: var(--white);
+        }
+    }
+}
+
+.popover {
+    div[role='tooltip'] {
+        position: relative;
+        padding-right: 26px;
+
+        & > div {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+
+            & > div {
+                padding-right: 36px;
+                border-right: 1px solid var(--gray-100);
+            }
+        }
+    }
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 30px;
+}
+
+.content {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 24px;
 }
