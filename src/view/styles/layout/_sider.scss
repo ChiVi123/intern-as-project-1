@@ -45,6 +45,11 @@
     }
 
     &-tabs {
+        @include abstracts.breakpoint(md) {
+            padding-left: 20px;
+            background-color: var(--white);
+        }
+
         .ant-tabs-nav::before {
             border-width: 3px;
             border-color: #eecde0;
