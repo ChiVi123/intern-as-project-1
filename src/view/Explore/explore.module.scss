@@ -92,10 +92,9 @@
         }
     }
 
-    &-image {
+    &-image img {
         width: 56px;
         height: 56px;
-        background-color: var(--explore-note-theme-color);
 
         @include abstracts.breakpoint(xxl) {
             width: 40px;
