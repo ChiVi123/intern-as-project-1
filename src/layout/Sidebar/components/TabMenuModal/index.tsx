@@ -28,7 +28,15 @@ function TabMenuModal() {
 
         return tabMenuState.data.map(({ children: data, ...rest }) => ({
             ...rest,
-            children: <TabContent key={rest.key} data={data || []} />,
+            children: (
+                <TabContent
+                    key={rest.key}
+                    data={data || []}
+                    onClose={() => {
+                        setModalOpen(false);
+                    }}
+                />
+            ),
         }));
     }, [tabMenuState.data, tabMenuState.status]);
 
