@@ -56,8 +56,6 @@ function TabMenuModal() {
 
     const handleOpen = () => setModalOpen((prev) => !prev);
 
-    console.log(tabMenuState.data);
-
     return (
         <div className={cx('modal-wrapper')}>
             <Button className={cx('modal-btn')} onClick={handleOpen}>
