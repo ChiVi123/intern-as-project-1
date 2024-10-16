@@ -7,6 +7,7 @@ export interface ILocationEntity {
     title: string;
     content: string;
     isList?: boolean;
+    articleSlug?: string;
     category?: DocumentReference<ICategoryEntity>;
     categoryId?: string;
     position: { top: string; left: string };

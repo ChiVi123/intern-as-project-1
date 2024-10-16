@@ -7,7 +7,7 @@ export const articleCollection = collection(firestore, 'article') as CollectionR
 export const getArticleBySlug = async (slug: string) => {
     try {
         const q = query(articleCollection, where('slug', '==', slug));
-        return await getDocs(q);
+        return getDocs(q);
     } catch (error) {
         console.log(error);
     }
