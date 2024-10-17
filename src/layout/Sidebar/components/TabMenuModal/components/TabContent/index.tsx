@@ -19,7 +19,15 @@ function TabContent({ data, onClose }: IProps) {
                     <ul className={cx('content-list')}>
                         {item.content.map((location) => (
                             <li key={location.id}>
-                                <Link to={location.articleSlug || ''} className={cx('content-item')} onClick={onClose}>
+                                <Link
+                                    to={
+                                        location.isList
+                                            ? `/category/${location.articleSlug || ''}`
+                                            : `/${location.articleSlug || ''}`
+                                    }
+                                    className={cx('content-item')}
+                                    onClick={onClose}
+                                >
                                     <span>{location.mark}</span>
                                     <span>{location.content}</span>
                                 </Link>

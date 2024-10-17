@@ -27,7 +27,12 @@ function Tip({ articleSlug, mark, title, content, position }: ITipProps) {
                         <div className={cx('title')}>{title}</div>
                         <div className={cx('content')}>{content}</div>
                     </div>
-                    <Link to={articleSlug || ''} type='text' aria-label='go-to-article' className={cx('button-link')}>
+                    <Link
+                        to={`/${articleSlug || ''}`}
+                        type='text'
+                        aria-label='go-to-article'
+                        className={cx('button-link')}
+                    >
                         <ArrowIcon />
                     </Link>
                 </Fragment>

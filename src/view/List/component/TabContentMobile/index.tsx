@@ -20,7 +20,14 @@ function TabContentMobile({ data }: IProps) {
                     <ul className={cx('content-list')}>
                         {item.content.map((location) => (
                             <li key={location.id}>
-                                <Link to={location.articleSlug || ''} className={cx('content-item')}>
+                                <Link
+                                    to={
+                                        location.isList
+                                            ? `/category/${location.articleSlug || ''}`
+                                            : `/${location.articleSlug || ''}`
+                                    }
+                                    className={cx('content-item')}
+                                >
                                     <span>{location.mark}</span>
                                     <span>{location.content}</span>
                                 </Link>

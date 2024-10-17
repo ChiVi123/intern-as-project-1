@@ -1,3 +1,4 @@
+export { default as ArticleCard } from './ArticleCard';
 export { default as ArticleNavigate } from './ArticleNavigate';
 export { default as ArticleThumbnail } from './ArticleThumbnail';
 export { default as ArticleTitle } from './ArticleTitle';
