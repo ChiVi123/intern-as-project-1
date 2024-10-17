@@ -9,11 +9,12 @@ interface IProps {
     description: string;
     category?: string;
     date?: string;
+    titleOnly?: boolean;
 }
 
 const cx = classNames.bind(styles);
 
-function ArticleTitle({ title, description, category, date }: IProps) {
+function ArticleTitle({ title, description, category, date, titleOnly }: IProps) {
     return (
         <div className={cx('wrap')}>
             <div>
@@ -33,10 +34,12 @@ function ArticleTitle({ title, description, category, date }: IProps) {
                     )}
                 </div>
             </div>
-            <div className={cx('description-wrap')}>
-                <span className={cx('description-title')}>Mô tả</span>
-                <p className={cx('description-content')}>{description}</p>
-            </div>
+            {titleOnly || (
+                <div className={cx('description-wrap')}>
+                    <span className={cx('description-title')}>Mô tả</span>
+                    <p className={cx('description-content')}>{description}</p>
+                </div>
+            )}
         </div>
     );
 }
