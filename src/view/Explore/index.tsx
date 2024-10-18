@@ -33,8 +33,6 @@ function ExplorePage() {
         };
     }, [dispatch]);
 
-    console.log('mapNotices::', mapNotices);
-
     return (
         <div className={cx('wrap')}>
             <TransformWrapper wheel={{ wheelDisabled: true }} panning={{ wheelPanning: true }}>
