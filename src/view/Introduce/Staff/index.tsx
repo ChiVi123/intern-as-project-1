@@ -26,64 +26,65 @@ interface IArrowProps {
     direction: 'left' | 'right';
 }
 
+const baseURL: string = 'https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com';
 const thuyTaThumbnails: ItemThumbnailType[] = [
     {
         id: '961d6baa-e74c-5c0e-8af7-9368e99c2def',
-        imageSrc: '/o/introduce%2Fstaff-thuy-ta-1-min.png?alt=media&token=acc22632-1b75-435c-bb26-4c48e7d80c19',
+        imageSrc: `${baseURL}/o/introduce%2Fstaff-thuy-ta-1-min.png?alt=media&token=acc22632-1b75-435c-bb26-4c48e7d80c19`,
         caption: 'Vua đầu bếp “Jan Can Cook” từng đến giao lưu với đội ngũ bếp của nhà hàng Thủy Tạ Đầm Sen',
     },
     {
         id: 'a77688d5-d1c6-5c65-8656-2c19024292db',
-        imageSrc: '/o/introduce%2Fstaff-thuy-ta-2-min.jpg?alt=media&token=4c7bbb50-0b49-4151-b2bd-b3c6af927256',
+        imageSrc: `${baseURL}/o/introduce%2Fstaff-thuy-ta-2-min.jpg?alt=media&token=4c7bbb50-0b49-4151-b2bd-b3c6af927256`,
         caption: 'caption',
     },
     {
         id: '52ecefe8-f6c6-549c-9453-50785f891fd4',
-        imageSrc: '/o/introduce%2Fstaff-thuy-ta-3-min.jpg?alt=media&token=90d94a5c-2180-4ef9-bdce-391bd2652389',
+        imageSrc: `${baseURL}/o/introduce%2Fstaff-thuy-ta-3-min.jpg?alt=media&token=90d94a5c-2180-4ef9-bdce-391bd2652389`,
         caption: 'caption',
     },
     {
         id: 'ef140326-6675-5274-828e-2528802b3283',
-        imageSrc: '/o/introduce%2Fstaff-thuy-ta-4.webp?alt=media&token=b3d5c967-d6f1-48e4-afce-594d31b0ff24',
+        imageSrc: `${baseURL}/o/introduce%2Fstaff-thuy-ta-4.webp?alt=media&token=b3d5c967-d6f1-48e4-afce-594d31b0ff24`,
         caption: 'caption',
     },
     {
         id: 'b783a2ce-8341-553b-bd30-09fdc8fc86a5',
-        imageSrc: '/o/introduce%2Fstaff-thuy-ta-5.webp?alt=media&token=8629f68c-556d-4ddf-a198-29e021c0a18b',
+        imageSrc: `${baseURL}/o/introduce%2Fstaff-thuy-ta-5.webp?alt=media&token=8629f68c-556d-4ddf-a198-29e021c0a18b`,
         caption: 'caption',
     },
 ];
 const vuonDaThumbnails: ItemThumbnailType[] = [
     {
         id: '961d6baa-e74c-5c0e-8af7-9368e99c2def',
-        imageSrc: '/o/introduce%2Fstaff-vuon-da-1.jpg?alt=media&token=969547ee-5fc5-4ab8-8917-e2876f040848',
+        imageSrc: `${baseURL}/o/introduce%2Fstaff-vuon-da-1.jpg?alt=media&token=969547ee-5fc5-4ab8-8917-e2876f040848`,
         caption: 'không gian cà phê vườn đá Đầm sen buổi tối',
     },
     {
         id: 'a77688d5-d1c6-5c65-8656-2c19024292db',
-        imageSrc: '/o/introduce%2Fstaff-vuon-da-2.jpg?alt=media&token=cd2e465b-1fe5-4702-a1b3-45d44a656e5d',
+        imageSrc: `${baseURL}/o/introduce%2Fstaff-vuon-da-2.jpg?alt=media&token=cd2e465b-1fe5-4702-a1b3-45d44a656e5d`,
         caption: 'Một tảng đá hình thù kỳ dị tại cà phê Vườn Đá',
     },
     {
         id: '52ecefe8-f6c6-549c-9453-50785f891fd4',
-        imageSrc: '/o/introduce%2Fstaff-vuon-da-3.jpg?alt=media&token=9431fa39-9a42-4832-a487-e8d8ad981787',
+        imageSrc: `${baseURL}/o/introduce%2Fstaff-vuon-da-3.jpg?alt=media&token=9431fa39-9a42-4832-a487-e8d8ad981787`,
         caption: 'cà phê vườn đá',
     },
     {
         id: 'ef140326-6675-5274-828e-2528802b3283',
-        imageSrc: '/o/introduce%2Fstaff-vuon-da-4.jpg?alt=media&token=f9b62ec8-e792-4bdf-bd83-8fb0c2968bf9',
+        imageSrc: `${baseURL}/o/introduce%2Fstaff-vuon-da-4.jpg?alt=media&token=f9b62ec8-e792-4bdf-bd83-8fb0c2968bf9`,
         caption: 'Một tảng đá hình thù kỳ dị tại cà phê Vườn Đá',
     },
     {
         id: 'b783a2ce-8341-553b-bd30-09fdc8fc86a5',
-        imageSrc: '/o/introduce%2Fstaff-vuon-da-5.jpg?alt=media&token=58b015dd-b381-4a80-9007-8f84fc0cbe6f',
+        imageSrc: `${baseURL}/o/introduce%2Fstaff-vuon-da-5.jpg?alt=media&token=58b015dd-b381-4a80-9007-8f84fc0cbe6f`,
         caption: 'không gian cà phê vườn đá Đầm sen buổi tối',
     },
 ];
 const mayYouLikeList: CardType[] = [
     {
         id: 'roller-coaster',
-        imageSrc: '/o/event%2Fmade-you-like-1-min.png?alt=media&token=2e7b1e4c-b5cf-46d1-8db3-1c39057d7fad',
+        imageSrc: `/o/event%2Fmade-you-like-1-min.png?alt=media&token=2e7b1e4c-b5cf-46d1-8db3-1c39057d7fad`,
         title: 'Roller Coaster',
         description: '',
         category: 'Cảm giác mạnh',
@@ -91,7 +92,7 @@ const mayYouLikeList: CardType[] = [
     },
     {
         id: 'vong-xoay-khong-gian',
-        imageSrc: '/o/event%2Fmade-you-like-2-min.png?alt=media&token=0176697b-c422-45f0-9458-0f2a0f79ccf6',
+        imageSrc: `/o/event%2Fmade-you-like-2-min.png?alt=media&token=0176697b-c422-45f0-9458-0f2a0f79ccf6`,
         title: 'Vòng xoay không gian',
         description: '',
         category: 'Cảm giác mạnh',
@@ -99,7 +100,7 @@ const mayYouLikeList: CardType[] = [
     },
     {
         id: 'vong-quay-than-toc',
-        imageSrc: '/o/event%2Fmade-you-like-3-min.png?alt=media&token=cb0b5dec-9f34-4423-a526-384f9972bed2',
+        imageSrc: `/o/event%2Fmade-you-like-3-min.png?alt=media&token=cb0b5dec-9f34-4423-a526-384f9972bed2`,
         title: 'Vòng quay thần tốc',
         description: '',
         category: 'Cảm giác mạnh',
@@ -107,7 +108,7 @@ const mayYouLikeList: CardType[] = [
     },
     {
         id: 'ca-chep-nhao-lon',
-        imageSrc: '/o/event%2Fmade-you-like-4-min.png?alt=media&token=212f2572-fab3-4811-a8b3-25d502e13c4b',
+        imageSrc: `/o/event%2Fmade-you-like-4-min.png?alt=media&token=212f2572-fab3-4811-a8b3-25d502e13c4b`,
         title: 'Cá chép nhào lộn',
         description: '',
         category: 'Cảm giác mạnh',
@@ -115,7 +116,7 @@ const mayYouLikeList: CardType[] = [
     },
     {
         id: 'roller-coaster-fwfw',
-        imageSrc: '/o/event%2Fmade-you-like-1-min.png?alt=media&token=2e7b1e4c-b5cf-46d1-8db3-1c39057d7fad',
+        imageSrc: `/o/event%2Fmade-you-like-1-min.png?alt=media&token=2e7b1e4c-b5cf-46d1-8db3-1c39057d7fad`,
         title: 'Roller Coaster',
         description: '',
         category: 'Cảm giác mạnh',
@@ -123,7 +124,7 @@ const mayYouLikeList: CardType[] = [
     },
     {
         id: 'vong-xoay-khong-gian-fwefwefwf',
-        imageSrc: '/o/event%2Fmade-you-like-2-min.png?alt=media&token=0176697b-c422-45f0-9458-0f2a0f79ccf6',
+        imageSrc: `/o/event%2Fmade-you-like-2-min.png?alt=media&token=0176697b-c422-45f0-9458-0f2a0f79ccf6`,
         title: 'Vòng xoay không gian',
         description: '',
         category: 'Cảm giác mạnh',
@@ -131,7 +132,7 @@ const mayYouLikeList: CardType[] = [
     },
     {
         id: 'vong-quay-than-toc-aggw',
-        imageSrc: '/o/event%2Fmade-you-like-3-min.png?alt=media&token=cb0b5dec-9f34-4423-a526-384f9972bed2',
+        imageSrc: `/o/event%2Fmade-you-like-3-min.png?alt=media&token=cb0b5dec-9f34-4423-a526-384f9972bed2`,
         title: 'Vòng quay thần tốc',
         description: '',
         category: 'Cảm giác mạnh',
@@ -139,7 +140,7 @@ const mayYouLikeList: CardType[] = [
     },
     {
         id: 'ca-chep-nhao-lon-gwwgw',
-        imageSrc: '/o/event%2Fmade-you-like-4-min.png?alt=media&token=212f2572-fab3-4811-a8b3-25d502e13c4b',
+        imageSrc: `/o/event%2Fmade-you-like-4-min.png?alt=media&token=212f2572-fab3-4811-a8b3-25d502e13c4b`,
         title: 'Cá chép nhào lộn',
         description: '',
         category: 'Cảm giác mạnh',
@@ -174,7 +175,7 @@ function Staff() {
 
                     <p style={{ width: '82.4%' }}>
                         <img
-                            src='https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/introduce%2Fstaff-logo-thuy-ta-min.png?alt=media&token=6f46d73a-bb2b-4a24-9259-3b77c10a7ea5'
+                            src={`${baseURL}/o/introduce%2Fstaff-logo-thuy-ta-min.png?alt=media&token=6f46d73a-bb2b-4a24-9259-3b77c10a7ea5`}
                             alt=''
                             data-role='logo-inline'
                             width={163}
@@ -212,7 +213,7 @@ function Staff() {
 
                     <p style={{ width: '91.8%' }}>
                         <img
-                            src='https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com/o/introduce%2Fstaff-logo-vuon-da-min.png?alt=media&token=87a84b25-ce2c-457b-9699-49c53300fe03'
+                            src={`${baseURL}/o/introduce%2Fstaff-logo-vuon-da-min.png?alt=media&token=87a84b25-ce2c-457b-9699-49c53300fe03`}
                             alt=''
                             data-role='logo-inline'
                             width={300}
