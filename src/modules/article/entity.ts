@@ -5,6 +5,7 @@ export interface IArticleEntity {
     thumbnail: string;
     blocks: ArticleBlockType[];
     category?: string;
+    categorySlug: string;
     prev: { label: string; value: string };
     next: { label: string; value: string };
     date: string;

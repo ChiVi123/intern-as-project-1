@@ -12,3 +12,15 @@ export const getArticleBySlug = async (slug: string) => {
         console.log(error);
     }
 };
+export const getAllArticleByCategorySlugNotArticleSlug = async (categorySlug: string, notArticleSlug: string) => {
+    try {
+        const q = query(
+            articleCollection,
+            where('categorySlug', '==', categorySlug),
+            where('slug', '!=', notArticleSlug),
+        );
+        return getDocs(q);
+    } catch (error) {
+        console.log(error);
+    }
+};
