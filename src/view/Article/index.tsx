@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ArticleNavigate, ArticleThumbnail, ArticleTitle, CarouselMightYouLike, CarouselThumbnail } from '~components';
+import {
+    ArticleNavigate,
+    ArticleThumbnail,
+    ArticleTitle,
+    CarouselMightYouLike,
+    CarouselThumbnail,
+    ScrollToTop,
+} from '~components';
 import { getAllArticleByCategorySlugNotArticleSlug, getArticleBySlug, IArticleEntity } from '~modules/article';
 
 function Article() {
@@ -54,6 +61,8 @@ function Article() {
 
     return (
         <div className='section'>
+            <ScrollToTop />
+
             {article?.blocks.map((block) => {
                 switch (block.type) {
                     case 'thumbnail':
