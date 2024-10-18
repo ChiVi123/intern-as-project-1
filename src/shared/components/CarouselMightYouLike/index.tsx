@@ -1,8 +1,9 @@
 import { Carousel } from 'antd';
 import classNames from 'classnames/bind';
 import { CSSProperties } from 'react';
-import Card from '~components/Card';
+import { ArticleCard } from '~components';
 import { ArrowLeftIcon, ArrowRightIcon } from '~icons';
+import { IArticleEntity } from '~modules/article';
 import styles from './carousel-might-you-like.module.scss';
 
 interface IAntdArrowProps {
@@ -14,7 +15,7 @@ interface IArrowProps {
     direction: 'left' | 'right';
 }
 interface IProps {
-    items: Blog[];
+    items: IArticleEntity[];
 }
 
 const Arrow = ({ currentSlide, direction, slideCount, style, ...carouselProps }: IArrowProps & IAntdArrowProps) => (
@@ -65,7 +66,7 @@ function CarouselMightYouLike({ items }: IProps) {
                 className='custom-carousel custom-carousel--multi-item'
             >
                 {items.map((card) => (
-                    <Card key={'carousel-multi-item-' + card.id} {...card} short />
+                    <ArticleCard key={'carousel-multi-item-' + card.id} {...card} short />
                 ))}
             </Carousel>
         </>
