@@ -43,5 +43,3 @@ function Home() {
 }
 
 export default Home;
-// <button type="button" aria-label="next" data-role="none" class="slick-arrow slick-next" style="display: block;"></button>
-// prevArrow={<ArrowLeftIcon />} nextArrow={<ArrowRightIcon />}
