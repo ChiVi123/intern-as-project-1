@@ -1,14 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ArticleThumbnail, ArticleTitle, CarouselThumbnail } from '~components';
-import { getArticleBySlug, IArticleEntity } from '~modules/article';
+import { ArticleNavigate, ArticleThumbnail, ArticleTitle, CarouselMightYouLike, CarouselThumbnail } from '~components';
+import { getAllArticleByCategorySlugNotArticleSlug, getArticleBySlug, IArticleEntity } from '~modules/article';
 
 function Article() {
     const { slug } = useParams();
     const [article, setArticle] = useState<IArticleEntity>();
+    const [mightYouLikeList, setMightYouLikeList] = useState<IArticleEntity[]>([]);
+    const ignore = useRef<boolean>(false);
 
     useEffect(() => {
         (async function (value: string) {
+            if (!ignore.current) {
+                return;
+            }
+
             try {
                 const querySnapshot = await getArticleBySlug(value);
 
@@ -22,11 +28,28 @@ function Article() {
                     return;
                 }
 
-                setArticle({ id: snapshot.id, ...snapshot.data() });
+                const articleData: IArticleEntity = snapshot.data();
+                articleData.id = snapshot.id;
+
+                const mightYouLikeSnapshot = await getAllArticleByCategorySlugNotArticleSlug(
+                    articleData.categorySlug!,
+                    value,
+                );
+
+                setArticle(articleData);
+                setMightYouLikeList((prev) =>
+                    mightYouLikeSnapshot
+                        ? mightYouLikeSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+                        : prev,
+                );
             } catch (error) {
                 console.log(error);
             }
         })(slug || '');
+
+        return () => {
+            ignore.current = true;
+        };
     }, [slug]);
 
     return (
@@ -51,6 +74,10 @@ function Article() {
                         return null;
                 }
             })}
+
+            {article && <ArticleNavigate {...article} />}
+
+            <CarouselMightYouLike items={mightYouLikeList} />
         </div>
     );
 }
