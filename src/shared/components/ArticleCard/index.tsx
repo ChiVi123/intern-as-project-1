@@ -58,7 +58,9 @@ function Card({ slug, thumbnail, title, description, category, date, short, self
                     <Meta
                         title={
                             <>
-                                <h3>{title}</h3>
+                                <Link to={`/${slug}`}>
+                                    <h3>{title}</h3>
+                                </Link>
                                 {short && <span className={cx('small-text')}>{date}</span>}
                             </>
                         }
