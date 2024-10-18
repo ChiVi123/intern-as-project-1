@@ -106,6 +106,7 @@ function Event() {
 
                 {topCarousel.map((_, index) => (
                     <li
+                        key={'carousel-3d' + index}
                         className={cx('carousel-3d-dot', { 'carousel-3d-dot--active': index === goToSlide })}
                         onClick={() => setGoToSlide(index)}
                     ></li>
