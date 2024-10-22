@@ -1,34 +1,39 @@
 import { config } from '@react-spring/web';
-import { Button, Carousel as CarouselAntd, Col, Row } from 'antd';
+import { Button, Col, Row } from 'antd';
 import Title from 'antd/es/typography/Title';
 import classNames from 'classnames/bind';
-import { useMemo, useState } from 'react';
+import { getDocs, query, where } from 'firebase/firestore';
+import { useEffect, useMemo, useState } from 'react';
 import Carousel from 'react-spring-3d-carousel';
 
-import { ButtonMore, Card } from '~components';
+import { ArticleCard, ButtonMore, CarouselMightYouLike } from '~components';
 import { getLinkImageFromFirebase } from '~helper/getLinkImage';
-import { ArrowLeftIcon, ArrowNarrowLeftIcon, ArrowRightIcon } from '~icons';
+import { ArrowNarrowLeftIcon } from '~icons';
+import { articleCollection, IArticleEntity } from '~modules/article';
 
-import { cards, maybeYouLikeList, topCarousel } from './data';
+import { topCarousel } from './data';
 
 import styles from './event.module.scss';
 
-interface IAntdArrowProps {
-    currentSlide?: number;
-    slideCount?: number;
-}
-interface IArrowProps {
-    direction: 'left' | 'right';
-}
-
 const cx = classNames.bind(styles);
-
-const Arrow = ({ currentSlide, direction, slideCount, ...carouselProps }: IArrowProps & IAntdArrowProps) => (
-    <>{direction === 'left' ? <ArrowLeftIcon {...carouselProps} /> : <ArrowRightIcon {...carouselProps} />}</>
-);
 
 function Event() {
     const [goToSlide, setGoToSlide] = useState<number>(0);
+    const [cards, setCards] = useState<IArticleEntity[]>([]);
+    const [mightYouLikes, setMightYouLikes] = useState<IArticleEntity[]>([]);
+
+    useEffect(() => {
+        (async () => {
+            const queryList = query(articleCollection, where('categorySlug', '==', 'su-kien'));
+            const queryMightYouLikeList = query(articleCollection, where('categorySlug', '==', 'cam-giac-manh'));
+
+            const snapshot = (await getDocs(queryList)).docs;
+            const mightYouLikeSnapshot = (await getDocs(queryMightYouLikeList)).docs;
+
+            setCards(snapshot.map((doc) => ({ ...doc.data(), id: doc.id })));
+            setMightYouLikes(mightYouLikeSnapshot.map((doc) => ({ ...doc.data(), id: doc.id })));
+        })();
+    }, []);
 
     const slides = useMemo(
         () =>
@@ -128,14 +133,7 @@ function Event() {
             <Row gutter={[24, 24]}>
                 {cards.map((card) => (
                     <Col key={'list' + card.id} span={24} sm={12} md={8} lg={12} xl={8} xxl={6}>
-                        <Card
-                            id={card.id}
-                            title={card.title}
-                            description={card.description}
-                            imageSrc={card.imageSrc}
-                            category={card.category}
-                            date={card.date}
-                        />
+                        <ArticleCard {...card} />
                     </Col>
                 ))}
             </Row>
@@ -151,52 +149,7 @@ function Event() {
                 </a>
             </div>
 
-            <h2 className={cx('heading-2')}>Có thể bạn thích</h2>
-
-            <CarouselAntd
-                arrows
-                infinite={false}
-                dots={false}
-                slidesToShow={4}
-                responsive={[
-                    {
-                        breakpoint: 1200,
-                        settings: {
-                            slidesToShow: 3,
-                        },
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            arrows: false,
-                            slidesToShow: 2,
-                        },
-                    },
-                    {
-                        breakpoint: 576,
-                        settings: {
-                            arrows: false,
-                            slidesToShow: 1,
-                        },
-                    },
-                ]}
-                prevArrow={<Arrow direction='left' />}
-                nextArrow={<Arrow direction='right' />}
-                className='custom-carousel custom-carousel--multi-item'
-            >
-                {maybeYouLikeList.map((card) => (
-                    <Card
-                        key={'carousel' + card.id}
-                        id={card.id}
-                        title={card.title}
-                        description={card.description}
-                        imageSrc={card.imageSrc}
-                        category={card.category}
-                        date={card.date}
-                        short
-                    />
-                ))}
-            </CarouselAntd>
+            <CarouselMightYouLike items={mightYouLikes} />
         </div>
     );
 }

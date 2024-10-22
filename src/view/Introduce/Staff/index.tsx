@@ -1,30 +1,20 @@
-import { Carousel } from 'antd';
 import classNames from 'classnames/bind';
-import { CSSProperties } from 'react';
+import { getDocs, query, where } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
 
-import { ArticleThumbnail, ArticleTitle, ButtonMore, Card, CarouselThumbnail, ItemThumbnailType } from '~components';
+import {
+    ArticleThumbnail,
+    ArticleTitle,
+    ButtonMore,
+    CarouselMightYouLike,
+    CarouselThumbnail,
+    ItemThumbnailType,
+} from '~components';
 import { getLinkImageFromFirebase } from '~helper/getLinkImage';
-import { ArrowLeftIcon, ArrowNarrowLeftIcon, ArrowRightIcon } from '~icons';
+import { ArrowNarrowLeftIcon } from '~icons';
+import { IArticleEntity, articleCollection } from '~modules/article';
 
 import styles from './staff.module.scss';
-
-type CardType = {
-    id: string;
-    imageSrc: string;
-    title: string;
-    description: string;
-    category: string;
-    date: string;
-};
-
-interface IAntdArrowProps {
-    currentSlide?: number;
-    slideCount?: number;
-    style?: CSSProperties;
-}
-interface IArrowProps {
-    direction: 'left' | 'right';
-}
 
 const baseURL: string = 'https://firebasestorage.googleapis.com/v0/b/intern-as-project-1.appspot.com';
 const thuyTaThumbnails: ItemThumbnailType[] = [
@@ -81,87 +71,21 @@ const vuonDaThumbnails: ItemThumbnailType[] = [
         caption: 'không gian cà phê vườn đá Đầm sen buổi tối',
     },
 ];
-const mayYouLikeList: CardType[] = [
-    {
-        id: 'roller-coaster',
-        imageSrc: `/o/event%2Fmade-you-like-1-min.png?alt=media&token=2e7b1e4c-b5cf-46d1-8db3-1c39057d7fad`,
-        title: 'Roller Coaster',
-        description: '',
-        category: 'Cảm giác mạnh',
-        date: '10/02/2020',
-    },
-    {
-        id: 'vong-xoay-khong-gian',
-        imageSrc: `/o/event%2Fmade-you-like-2-min.png?alt=media&token=0176697b-c422-45f0-9458-0f2a0f79ccf6`,
-        title: 'Vòng xoay không gian',
-        description: '',
-        category: 'Cảm giác mạnh',
-        date: '10/02/2020',
-    },
-    {
-        id: 'vong-quay-than-toc',
-        imageSrc: `/o/event%2Fmade-you-like-3-min.png?alt=media&token=cb0b5dec-9f34-4423-a526-384f9972bed2`,
-        title: 'Vòng quay thần tốc',
-        description: '',
-        category: 'Cảm giác mạnh',
-        date: '10/02/2020',
-    },
-    {
-        id: 'ca-chep-nhao-lon',
-        imageSrc: `/o/event%2Fmade-you-like-4-min.png?alt=media&token=212f2572-fab3-4811-a8b3-25d502e13c4b`,
-        title: 'Cá chép nhào lộn',
-        description: '',
-        category: 'Cảm giác mạnh',
-        date: '10/02/2020',
-    },
-    {
-        id: 'roller-coaster-fwfw',
-        imageSrc: `/o/event%2Fmade-you-like-1-min.png?alt=media&token=2e7b1e4c-b5cf-46d1-8db3-1c39057d7fad`,
-        title: 'Roller Coaster',
-        description: '',
-        category: 'Cảm giác mạnh',
-        date: '10/02/2020',
-    },
-    {
-        id: 'vong-xoay-khong-gian-fwefwefwf',
-        imageSrc: `/o/event%2Fmade-you-like-2-min.png?alt=media&token=0176697b-c422-45f0-9458-0f2a0f79ccf6`,
-        title: 'Vòng xoay không gian',
-        description: '',
-        category: 'Cảm giác mạnh',
-        date: '10/02/2020',
-    },
-    {
-        id: 'vong-quay-than-toc-aggw',
-        imageSrc: `/o/event%2Fmade-you-like-3-min.png?alt=media&token=cb0b5dec-9f34-4423-a526-384f9972bed2`,
-        title: 'Vòng quay thần tốc',
-        description: '',
-        category: 'Cảm giác mạnh',
-        date: '10/02/2020',
-    },
-    {
-        id: 'ca-chep-nhao-lon-gwwgw',
-        imageSrc: `/o/event%2Fmade-you-like-4-min.png?alt=media&token=212f2572-fab3-4811-a8b3-25d502e13c4b`,
-        title: 'Cá chép nhào lộn',
-        description: '',
-        category: 'Cảm giác mạnh',
-        date: '10/02/2020',
-    },
-];
 
 const cx = classNames.bind(styles);
-const Arrow = ({ currentSlide, direction, slideCount, style, ...carouselProps }: IArrowProps & IAntdArrowProps) => (
-    <>
-        {direction === 'left' ? (
-            <ArrowLeftIcon aria-label='arrow-left' style={{ ...style, display: 'inline-flex' }} {...carouselProps} />
-        ) : (
-            <ArrowRightIcon aria-label='arrow-right' style={{ ...style, display: 'inline-flex' }} {...carouselProps} />
-        )}
-    </>
-);
 
 function Staff() {
     const imageSrc: string =
         '/o/introduce%2Fstaff-thumbnail-min.png?alt=media&token=6c6fedbc-25cb-44c3-b7f4-dbbad8bcecdc';
+    const [cards, setCards] = useState<IArticleEntity[]>([]);
+
+    useEffect(() => {
+        (async () => {
+            const queryList = query(articleCollection, where('categorySlug', '==', 'canh-dep'));
+            const snapshot = (await getDocs(queryList)).docs;
+            setCards(snapshot.map((doc) => ({ ...doc.data(), id: doc.id })));
+        })();
+    }, []);
 
     return (
         <div className='section introduce-staff'>
@@ -253,52 +177,7 @@ function Staff() {
                 </a>
             </div>
 
-            <h2 className={cx('heading-2')}>Có thể bạn thích</h2>
-
-            <Carousel
-                arrows
-                infinite={false}
-                dots={false}
-                slidesToShow={4}
-                responsive={[
-                    {
-                        breakpoint: 1200,
-                        settings: {
-                            slidesToShow: 3,
-                        },
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            arrows: false,
-                            slidesToShow: 2,
-                        },
-                    },
-                    {
-                        breakpoint: 576,
-                        settings: {
-                            arrows: false,
-                            slidesToShow: 1,
-                        },
-                    },
-                ]}
-                prevArrow={<Arrow direction='left' />}
-                nextArrow={<Arrow direction='right' />}
-                className='custom-carousel custom-carousel--multi-item'
-            >
-                {mayYouLikeList.map((card) => (
-                    <Card
-                        key={'carousel' + card.id}
-                        id={card.id}
-                        title={card.title}
-                        description={card.description}
-                        imageSrc={card.imageSrc}
-                        category={card.category}
-                        date={card.date}
-                        short
-                    />
-                ))}
-            </Carousel>
+            <CarouselMightYouLike items={cards} />
         </div>
     );
 }
