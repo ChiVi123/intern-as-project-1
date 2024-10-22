@@ -3,7 +3,6 @@ import { createBrowserRouter } from 'react-router-dom';
 import { DefaultLayout, LayoutNoFooter } from '~layout';
 import { articleRouter } from '~view/Article/router';
 import { categoryRouter } from '~view/Category/router';
-import { eventDetailRouter } from '~view/Event/Detail/router';
 import { eventRouter } from '~view/Event/router';
 import { exploreRouter } from '~view/Explore/router';
 import { homeRouter } from '~view/Home/router';
@@ -36,7 +35,6 @@ const browserRouter = createBrowserRouter([
             ticketServiceRouter,
             ticketExerciseRouter,
             eventRouter,
-            eventDetailRouter,
             articleRouter,
             exploreListRouter,
             categoryRouter,
