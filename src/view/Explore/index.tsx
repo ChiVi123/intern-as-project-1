@@ -1,6 +1,6 @@
 import { Button, Flex, Popover } from 'antd';
 import classNames from 'classnames/bind';
-import { Fragment, useEffect, useRef } from 'react';
+import { Fragment, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 
@@ -18,19 +18,12 @@ const cx = classNames.bind(styles);
 function ExplorePage() {
     const { data: locations } = useSelector(selectLocationState);
     const { data: mapNotices, status: mapNoticesStatus } = useSelector(selectMapNoticeState);
-    const ignore = useRef<boolean>(false);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
         (async function () {
-            if (!ignore.current) {
-                await dispatch(fetchMapNotices());
-            }
+            await dispatch(fetchMapNotices());
         })();
-
-        return () => {
-            ignore.current = true;
-        };
     }, [dispatch]);
 
     return (

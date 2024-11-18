@@ -1,6 +1,6 @@
 import { Button, Modal, Tabs, TabsProps } from 'antd';
 import classNames from 'classnames/bind';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useAppDispatch } from '~core/store';
@@ -18,7 +18,6 @@ const cx = classNames.bind(styles);
 function TabMenuModal() {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const tabMenuState = useSelector(selectTabMenuState);
-    const ignoreFetch = useRef<boolean>(false);
     const dispatch = useAppDispatch();
 
     const tabMenu: TabsProps['items'] = useMemo((): TabsProps['items'] => {
@@ -42,16 +41,10 @@ function TabMenuModal() {
 
     useEffect(() => {
         (async function () {
-            if (!ignoreFetch.current) {
-                await dispatch(fetchAllLocation());
-                await dispatch(fetchCategoryTree());
-                await dispatch(fetchTabMenu());
-            }
+            await dispatch(fetchAllLocation());
+            await dispatch(fetchCategoryTree());
+            await dispatch(fetchTabMenu());
         })();
-
-        return () => {
-            ignoreFetch.current = true;
-        };
     }, [dispatch]);
 
     const handleOpen = () => setModalOpen((prev) => !prev);

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
     ArticleNavigate,
@@ -14,14 +14,9 @@ function Article() {
     const { slug } = useParams();
     const [article, setArticle] = useState<IArticleEntity>();
     const [mightYouLikeList, setMightYouLikeList] = useState<IArticleEntity[]>([]);
-    const ignore = useRef<boolean>(false);
 
     useEffect(() => {
         (async function (value: string) {
-            if (!ignore.current) {
-                return;
-            }
-
             try {
                 const querySnapshot = await getArticleBySlug(value);
 
@@ -53,10 +48,6 @@ function Article() {
                 console.log(error);
             }
         })(slug || '');
-
-        return () => {
-            ignore.current = true;
-        };
     }, [slug]);
 
     return (
